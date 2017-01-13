@@ -713,7 +713,7 @@ HTML code in order to allow the input fields to be on the same line.*/
 
 @media only screen and (max-width: 1242px) {
 	.site-inner,
-									.wrap {
+	.wrap {
 		max-width: 768px;
 	}
 	
@@ -727,15 +727,15 @@ HTML code in order to allow the input fields to be on the same line.*/
 	}
 	
 	.content,
-									.sidebar,
-									.site-header .widget-area,
-									.title-area {
+	.sidebar,
+	.site-header .widget-area,
+	.title-area {
 		width: 100%;
 	}
 	
 	.genesis-nav-menu,
-									.site-header .widget-area,
-									.site-title {
+	.site-header .widget-area,
+	.site-title {
 		text-align: center;
 	}
 	
@@ -768,17 +768,17 @@ HTML code in order to allow the input fields to be on the same line.*/
 	}
 	
 	.five-sixths,
-									.four-sixths,
-									.one-fourth,
-									.one-half,
-									.one-sixth,
-									.one-third,
-									.pricing-table .one-third,
-									.three-fourths,
-									.three-sixths,
-									.two-fourths,
-									.two-sixths,
-									.two-thirds {
+	.four-sixths,
+	.one-fourth,
+	.one-half,
+	.one-sixth,
+	.one-third,
+	.pricing-table .one-third,
+	.three-fourths,
+	.three-sixths,
+	.two-fourths,
+	.two-sixths,
+	.two-thirds {
 		margin: 0;
 		width: 100%;
 	}
@@ -822,7 +822,7 @@ HTML code in order to allow the input fields to be on the same line.*/
 
 @media only screen and (max-width: 960px) {
 	.site-inner,
-									.wrap {
+	.wrap {
 		max-width: 768px;
 	}
 	
@@ -836,15 +836,15 @@ HTML code in order to allow the input fields to be on the same line.*/
 	}
 	
 	.content,
-									.sidebar,
-									.site-header .widget-area,
-									.title-area {
+	.sidebar,
+	.site-header .widget-area,
+	.title-area {
 		width: 100%;
 	}
 	
 	.genesis-nav-menu,
-									.site-header .widget-area,
-									.site-title {
+	.site-header .widget-area,
+	.site-title {
 		text-align: center;
 	}
 	
@@ -877,17 +877,17 @@ HTML code in order to allow the input fields to be on the same line.*/
 	}
 	
 	.five-sixths,
-									.four-sixths,
-									.one-fourth,
-									.one-half,
-									.one-sixth,
-									.one-third,
-									.pricing-table .one-third,
-									.three-fourths,
-									.three-sixths,
-									.two-fourths,
-									.two-sixths,
-									.two-thirds {
+	.four-sixths,
+	.one-fourth,
+	.one-half,
+	.one-sixth,
+	.one-third,
+	.pricing-table .one-third,
+	.three-fourths,
+	.three-sixths,
+	.two-fourths,
+	.two-sixths,
+	.two-thirds {
 		margin: 0;
 		width: 100%;
 	}
@@ -950,13 +950,13 @@ HTML code in order to allow the input fields to be on the same line.*/
 	
 	@media only screen and (max-width: 768px) {
 	.site-inner,
-									.wrap {
+	.wrap {
 		max-width: none;
 		width: 100%;
 	}
 	
 	.site-inner,
-									.wrap {
+	.wrap {
 		padding: 0 5%;
 	}
 	
@@ -973,7 +973,7 @@ HTML code in order to allow the input fields to be on the same line.*/
 	}
 	
 	.genesis-nav-menu.responsive-menu .menu-item,
-									.responsive-menu-icon {
+	.responsive-menu-icon {
 		display: block;
 	}
 	
@@ -982,9 +982,9 @@ HTML code in order to allow the input fields to be on the same line.*/
 	}
 	
 	.genesis-nav-menu.responsive-menu li.current-menu-item > a,
-									.genesis-nav-menu.responsive-menu .sub-menu li.current-menu-item > a:hover,
-									.genesis-nav-menu.responsive-menu li a,
-									.genesis-nav-menu.responsive-menu li a:hover {
+	.genesis-nav-menu.responsive-menu .sub-menu li.current-menu-item > a:hover,
+	.genesis-nav-menu.responsive-menu li a,
+	.genesis-nav-menu.responsive-menu li a:hover {
 		border: none;
 		display: block;
 		padding: 20px;
@@ -1039,7 +1039,7 @@ HTML code in order to allow the input fields to be on the same line.*/
 	}
 	
 	.genesis-nav-menu.responsive-menu .sub-menu li a,
-									.genesis-nav-menu.responsive-menu .sub-menu li a:hover {
+	.genesis-nav-menu.responsive-menu .sub-menu li a:hover {
 		padding: 12px 20px;
 		position: relative;
 		text-transform: none;
@@ -1047,24 +1047,24 @@ HTML code in order to allow the input fields to be on the same line.*/
 	}
 	
 	.genesis-nav-menu.responsive-menu .current-menu-item > a,
-									.genesis-nav-menu.responsive-menu .sub-menu .current-menu-item > a:hover,
-									.genesis-nav-menu.responsive-menu > li.menu-item-has-children:hover > a,
-									.genesis-nav-menu.responsive-menu a:hover {
+	.genesis-nav-menu.responsive-menu .sub-menu .current-menu-item > a:hover,
+	.genesis-nav-menu.responsive-menu > li.menu-item-has-children:hover > a,
+	.genesis-nav-menu.responsive-menu a:hover {
 		background: none;
 	}
 	
 	.site-header .genesis-nav-menu.responsive-menu .current-menu-item > a,
-									.site-header .genesis-nav-menu.responsive-menu .sub-menu li a,
-									.site-header .genesis-nav-menu.responsive-menu .sub-menu li a:hover,
-									.site-header .genesis-nav-menu.responsive-menu .sub-menu,
-									.site-header .genesis-nav-menu.responsive-menu > .menu-item-has-children:before,
-									.site-header .genesis-nav-menu.responsive-menu > li:hover > a,
-									.site-header .genesis-nav-menu.responsive-menu a:hover {
+	.site-header .genesis-nav-menu.responsive-menu .sub-menu li a,
+	.site-header .genesis-nav-menu.responsive-menu .sub-menu li a:hover,
+	.site-header .genesis-nav-menu.responsive-menu .sub-menu,
+	.site-header .genesis-nav-menu.responsive-menu > .menu-item-has-children:before,
+	.site-header .genesis-nav-menu.responsive-menu > li:hover > a,
+	.site-header .genesis-nav-menu.responsive-menu a:hover {
 		color: #fff;
 	}
 	
 	.home-even,
-									.home-odd {
+	.home-odd {
 		padding: 90px 0 100px;
 	}
 	
@@ -1078,15 +1078,15 @@ HTML code in order to allow the input fields to be on the same line.*/
 	}
 	
 	/* Commented out to keep three-column grid in mobile (see below for new code)
-										a.floating-box {
-											box-sizing: border-box;
-											width: 100%;
-											margin: 0;
-											height: auto;
-											border: 3px solid #000;
-											float: left;
-										}
-									*/
+		a.floating-box {
+			box-sizing: border-box;
+			width: 100%;
+			margin: 0;
+			height: auto;
+			border: 3px solid #000;
+			float: left;
+		}
+	*/
 	a.floating-box {
 		width: 31.333%;
 		margin: 1%;
@@ -1096,20 +1096,20 @@ HTML code in order to allow the input fields to be on the same line.*/
 	}
 	
 	span.recorder,
-									div#flashcontent {
+	div#flashcontent {
 		display: none;
 	}
 }
 
 @media only screen and (max-width: 480px) {
 	.footer-widgets .widget-title,
-									.home-even .widget-title,
-									.home-odd .widget-title {
+	.home-even .widget-title,
+	.home-odd .widget-title {
 		font-size: 36px;
 	}
 	
 	.home-even,
-									.home-odd {
+	.home-odd {
 		font-size: 22px;
 	}
 	
