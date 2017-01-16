@@ -166,7 +166,6 @@ a.floating-box:hover {
 
 .clear {
 	clear: left;
-	padding-top: 15px;
 }
 
 /*Change blockquote text to a darker shade of gray.*/
@@ -410,18 +409,6 @@ span#phoneme {
 	font-family: Montserrat, sans-serif;
 }
 
-span.linebreak {
-	white-space:pre;
-}
-
-span.linebreak:before {
-	content: "\A";
-}
-
-.entry-content.shifted span.linebreak:before {
-	content: " | ";
-}
-
 /* Puts box and shadow around text */
 .exercise {
 	border: 1px solid rgba(0,0,0,.2);
@@ -450,11 +437,6 @@ div#container {
 	font-size: .8em;
 	max-height: 70vh;
 	overflow-y: auto;
-	display: none;
-}
-
-.entry-content.shifted #video-phoneme-explanation {
-	display: block;
 }
 
 /* Transitions */
@@ -669,14 +651,13 @@ p {
 	text-shadow: none;
 }
 
-
 /*Code for increased header size*/
-/*header.site-header {
+header.site-header {
 	height: 85px;
 }
-*/
+
 /*Code for increased TfCS Logo size*/
-/*.header-image .title-area {
+.header-image .title-area {
 	padding: 0;
 	width: 440px;
 	height: 85px;
@@ -690,7 +671,7 @@ p {
 	text-indent: -9999px;
 	max-width: 440px;
 }
-*/
+
 /*Code to give header title and menu more space to fit on one line.*/
 .site-inner,
 .wrap {
@@ -723,6 +704,9 @@ HTML code in order to allow the input fields to be on the same line.*/
 	margin-right: 5px;
 }
 
+.clear {
+	padding-top: 15px;
+}
 
 /*Code to Change "Back to Practice List" to a smaller font size.*/
 .goback {
@@ -732,7 +716,6 @@ HTML code in order to allow the input fields to be on the same line.*/
 /*******************************************************
 ********************************************************
 *******************************************************/
-
 @media only screen and (max-width: 1294px) {
 	div#phoneme-container {
 		min-height: 422px;
@@ -969,16 +952,14 @@ HTML code in order to allow the input fields to be on the same line.*/
 	}
 	
 	.site-title {
-		font-size: 30px;
 		white-space: initial;
 	}
 	
 	.video-navigation-mobile {
 		display: flex;
 	}
-}
 	
-@media only screen and (max-width: 768px) {
+	@media only screen and (max-width: 768px) {
 	.site-inner,
 	.wrap {
 		max-width: none;
@@ -1107,6 +1088,16 @@ HTML code in order to allow the input fields to be on the same line.*/
 		text-align: center;
 	}
 	
+	/* Commented out to keep three-column grid in mobile (see below for new code)
+		a.floating-box {
+			box-sizing: border-box;
+			width: 100%;
+			margin: 0;
+			height: auto;
+			border: 3px solid #000;
+			float: left;
+		}
+	*/
 	a.floating-box {
 		width: 31.333%;
 		margin: 1%;
