@@ -4,7 +4,6 @@ http://stackoverflow.com/questions/12716525/sibling-divs-match-height-in-contain
 http://stackoverflow.com/questions/526294/how-might-i-force-a-floating-div-to-match-the-height-of-another-floating-div
 http://stackoverflow.com/questions/2997767/how-do-i-keep-two-divs-that-are-side-by-side-the-same-height
 http://stackoverflow.com/questions/12912604/make-one-divs-height-match-anothers
-
 */
 
 /*Code to adjust the position of the number/bullet next to a SoundCite button*/
@@ -295,9 +294,99 @@ input:hover[type="submit"],
 	font-size: 25px;
 }
 
-/******************************************************************/
+/*****************************************************/
+/*Code to remove top padding from Baruch College logo.*/
+li#menu-item-290.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-290 a {
+	padding-top: 0;
+}
+
+/*Code to adjust jump from anchor tags on FAQs page, so that the header does not cover the text.*/
+.anchor {
+	display: block;
+	height: 95px;
+/*same height as header*/
+	margin-top: -95px;
+/*same height as header*/
+	visibility: hidden;
+}
+
+/*Code to change the font of the website.*/
+.site-title {
+	font-family: Century Gothic, sans-serif;
+	font-size: 35px;
+	text-transform: none;
+	padding-left: 5px;
+	white-space: nowrap;
+
+}
+
+/*Code to change the font of the paragraphs in the website.*/
+p {
+	font-family: Century Gothic;
+}
+
+.entry {
+	font-family: Century Gothic;
+}
+
+/*Code for resizing title area box to give "Tools for Clear Speech" more space.*/
+/*Revision Jun 2016: previous width of 415px caused line break in window width ~1250px, because of scrollbar.*/
+.title-area {
+	width: 398px;
+}
+
+
+/*Code for background shading of white text in the home sections.*/
+.home-section-1,
+.home-section-3,
+.home-section-5 {
+	background-attachment: fixed;
+	background-color: #fff;
+	background-position: 50% 0;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	color: #fff;
+	display: block;
+	text-shadow: 1px 0 4px #000;
+}
+
+/*Code to take away the shadow from the text in each odd section button.*/
+.footer-widgets a.button:hover,
+.home-odd a.button:hover {
+	text-shadow: none;
+}
+
+/*Code to give header title and menu more space to fit on one line.*/
+.site-inner,
+.wrap {
+	max-width: 1280px;
+}
+
+/*Code to move Menu widget down and align with TfCS logo. "Padding-top: 10px;" was added to original CSS code*/
+.site-header .widget-area {
+	width: 826px;
+}
+
+/*Code to adjust input text fields for the Mail-Chimp form. This code does not include the changes done to the HTML code for the Mail-Chimp form.  tags and labels were deleted from HTML code in order to allow the input fields to be on the same line.*/
+#mc_embed_signup .mc-field-group input {
+	display: block;
+	width: 31%;
+	padding: 8px 0;
+	text-indent: 2%;
+	float: left;
+	margin-right: 5px;
+}
+
+/*Code to Change "Back to Practice List" to a smaller font size.*/
+.goback {
+	font-size: 80%;
+}
+
+/*********************************/
 /* Video layout and navigation, in TfCS to-go pronunciation pages */
-/******************************************************************/
+/*********************************/
 .video-navigation {
 	position: relative;
 	top: 0;
@@ -308,7 +397,7 @@ input:hover[type="submit"],
 	align-items: center;
 	left: 0;
 	background-color: #6abdef;
-	width: 30%;
+	width: 33%;
 	border-radius: 15px 0 0 0;
 }
 
@@ -368,7 +457,7 @@ input:hover[type="submit"],
 /* Positions and resizes video */
 .video-frame {
 	position: relative;
-	width: 70%;
+	width: 67%;
 	float: right;
 }
 
@@ -382,6 +471,8 @@ input:hover[type="submit"],
 
 #video {
 	display: block;
+	width: 100%;
+	height: 100%;
 	margin: auto;
 	border-radius: 0 15px 0 0;
 }
@@ -389,6 +480,46 @@ input:hover[type="submit"],
 #video.minimized {
 	border-radius: 5px 5px 0 0;
 }
+
+.video-js .vjs-tech {
+	position: relative !important;
+	border-radius: 0 15px 0 0;
+}
+
+.video-navigation.minimized .video-js .vjs-tech {
+	border-radius: 5px 5px 0 0;
+}
+
+.vjs-big-play-button {
+	font-size: 9em !important;
+	width: 1.5em !important;
+	top: 35% !important;
+	left: 40% !important;
+	border-radius: 1.5em !important;
+}
+
+.video-frame.minimized .vjs-big-play-button {
+	font-size: 6em !important;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.vjs-paused .vjs-big-play-button {
+	display:block !important;
+}
+
+.vjs-play-control,
+.vjs-fullscreen-control {
+	display:none !important;
+}
+
+/*
+.vjs-playback-rate-value:before {
+	content: "Playback Speed: "
+}
+*/
 
 .entry-content.shifted {
 	position: relative;
@@ -398,7 +529,7 @@ input:hover[type="submit"],
 
 div#phoneme-container {
 	display: flex;
-	min-height: 440px;
+	min-height: 400px;
 }
 
 span#top {
@@ -418,9 +549,10 @@ span.linebreak:before {
 	content: "\A";
 }
 
-.entry-content.shifted span.linebreak:before {
+.entry-content.shifted div.video-navigation-button span.linebreak:before {
 	content: " | ";
 }
+
 
 /* Puts box and shadow around text */
 .exercise {
@@ -484,7 +616,6 @@ button.recorder {
 	transition: all .2s ease-in;
 }
 
-/****************************************************/
 /* Audio Recorder */
 object#recorderApp {
 	position: fixed;
@@ -503,11 +634,11 @@ span.recorder {
 }
 
 button.recorder {
-	width: 2em;
-	height: 2em;
+	width: 4em;
+	height: 4em;
 	margin: 25px 5px;
 	padding: 0;
-	border-radius: 5px;
+	border-radius: .5em;
 	border: none;
 	background-size: 67%;
 	background-repeat: no-repeat;
@@ -516,7 +647,9 @@ button.recorder {
 	z-index: 1000;
 }
 
-button.recorder.minimized {
+div.minimized button.recorder {
+	width: 2em;
+	height: 2em;
 	margin: 1px;
 }
 
@@ -565,11 +698,17 @@ button.help {
 }
 
 .level {
-	width: 2em;
-	height: 2em;
+	width: 4em;
+	height: 4em;
 	position: relative;
 	left: 0;
 	top: 0;
+	border-radius: .5em;
+}
+
+.entry-content.shifted .level {
+	width: 2em;
+	height: 2em;	
 }
 
 .audiolevel {
@@ -578,7 +717,6 @@ button.help {
 	left: 0;
 	width: 100%;
 	background-color: rgba(200,0,0,0.5);
-	border-radius: 5px;
 }
 
 .progress {
@@ -587,7 +725,6 @@ button.help {
 	left: 0;
 	height: 100%;
 	background-color: rgba(0,160,0,0.5);
-	border-radius: 5px;
 }
 
 ul.tab > li {
@@ -607,132 +744,10 @@ ul.tab > li {
 	box-shadow: none !important;
 }
 
-/*****************************************************/
-/*Code to remove top padding from Baruch College logo.*/
-li#menu-item-290.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-290 a {
-	padding-top: 0;
-}
 
-/*Code to adjust jump from anchor tags on FAQs page, so that the header does not cover the text.*/
-.anchor {
-	display: block;
-	height: 95px;
-/*same height as header*/
-	margin-top: -95px;
-/*same height as header*/
-	visibility: hidden;
-}
-
-/*Code to change the font of the website.*/
-.site-title {
-	font-family: Century Gothic, sans-serif;
-	font-size: 35px;
-	text-transform: none;
-	padding-left: 5px;
-	white-space: nowrap;
-}
-
-/*Code to change the font of the paragraphs in the website.*/
-p {
-	font-family: Century Gothic;
-}
-
-.entry {
-	font-family: Century Gothic;
-}
-
-/*Code for resizing title area box to give "Tools for Clear Speech" more space.*/
-/*Revision Jun 2016: previous width (415px) caused line break in window width ~1250px, because of scrollbar.*/
-.title-area {
-	width: 398px;
-}
-
-/*Code for background shading of white text in the home sections.*/
-.home-section-1,
-.home-section-3,
-.home-section-5 {
-	background-attachment: fixed;
-	background-color: #fff;
-	background-position: 50% 0;
-	background-repeat: no-repeat;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	background-size: cover;
-	color: #fff;
-	display: block;
-	text-shadow: 1px 0 4px #000;
-}
-
-/*Code to take away the shadow from the text in each odd section button.*/
-.footer-widgets a.button:hover,
-.home-odd a.button:hover {
-	text-shadow: none;
-}
-
-
-/*Code for increased header size*/
-/*header.site-header {
-	height: 85px;
-}
-*/
-/*Code for increased TfCS Logo size*/
-/*.header-image .title-area {
-	padding: 0;
-	width: 440px;
-	height: 85px;
-	margin-left: -100px;
-}
-
-.header-image .site-title > a {
-	background-size: contain !important;
-	display: block;
-	height: 85px;
-	text-indent: -9999px;
-	max-width: 440px;
-}
-*/
-/*Code to give header title and menu more space to fit on one line.*/
-.site-inner,
-.wrap {
-	max-width: 1280px;
-}
-
-/*Code to move Menu widget down and align with TfCS logo. "Padding-top: 10px;" was added to original CSS code*/
-.site-header .widget-area {
-	width: 826px;
-}
-
-/*Code to adjust the Mail-Chimp form. Tags and labels were deleted from
-HTML code in order to allow the input fields to be on the same line.*/
-#mc_embed_signup {
-	border: 3px solid;
-	border-color: black;
-	background: #fff;
-	clear: left;
-	font: 14px Helvetica, Arial, sans-serif;
-}
-
-/***Changes to this part might not work because there is CSS styling in the actual widget***/
-#mc_embed_signup .mc-field-group input {
-	box-sizing: border-box;
-	display: inline-block;
-	width: 32%;
-	padding: 10px;
-	text-indent: 2%;
-	float: left;
-	margin-right: 5px;
-}
-
-
-/*Code to Change "Back to Practice List" to a smaller font size.*/
-.goback {
-	font-size: 80%;
-}
-
-/*******************************************************
-********************************************************
-*******************************************************/
-
+/***********************************
+************************************
+***********************************/
 @media only screen and (max-width: 1294px) {
 	div#phoneme-container {
 		min-height: 422px;
@@ -845,6 +860,11 @@ HTML code in order to allow the input fields to be on the same line.*/
 	
 	.video-frame.minimized {
 		width: 20%;
+	}
+
+	.level, button.recorder {
+		width: 3em;
+		height: 3em;
 	}
 }
 
@@ -1114,6 +1134,11 @@ HTML code in order to allow the input fields to be on the same line.*/
 		padding: 20px 10px;
 		border: 2px solid #000;
 	}
+
+	.site-title {
+		font-size: 26px;
+	}
+	
 	
 	span.recorder,
 	div#flashcontent {
