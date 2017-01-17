@@ -18,8 +18,18 @@ span.soundcite-loaded {
 	background-color: #44ace8;
 }
 
+.entry-content.shifted div.phoneme-grid {
+	width: 160%;
+}
+
+.entry-content.shifted a.floating-box {
+	width: 18%;
+	margin: 1%;
+	height: 9em;
+}
+
 /*Code to reveal FSS descriptions*/
-#fsstitle1, #fsstitle2, #fsstitle3, #fsstitle4, #fsstitle5, #fsstitle6, #fsstitle7, #fsstitle8, #fsstitle9, #fsstitle10, #fsstitle11, #fsstitle12, #fsstitle13, #fsstitle14, #fsstitle15 {
+#fsstitle1, #fsstitle2, #fsstitle3, #fsstitle4, #fsstitle5, #fsstitle6, #fsstitle7, #fsstitle8, #fsstitle9, #fsstitle10, #fsstitle11, #fsstitle12, #fsstitle13, #fsstitle14, #fsstitle15, .fsstitle {
 	color: #ffffff;
 	background-color: #000000;
 	padding: 5px;
@@ -27,7 +37,7 @@ span.soundcite-loaded {
 	border: solid 1px #c3c3c3;
 }
 
-#fss1, #fss2, #fss3, #fss4, #fss5, #fss6, #fss7, #fss8, #fss9, #fss10, #fss11, #fss12, #fss13, #fss14, #fss15 {
+#fss1, #fss2, #fss3, #fss4, #fss5, #fss6, #fss7, #fss8, #fss9, #fss10, #fss11, #fss12, #fss13, #fss14, #fss15, .fss {
 	padding: 5px;
 	text-align: center;
 	background-color: #a4d7f4;
@@ -35,7 +45,7 @@ span.soundcite-loaded {
 	display: none;
 }
 
-#fsstitle1:hover, #fsstitle2:hover, #fsstitle3:hover, #fsstitle4:hover, #fsstitle5:hover, #fsstitle6:hover, #fsstitle7:hover, #fsstitle8:hover, #fsstitle9:hover, #fsstitle10:hover, #fsstitle11:hover, #fsstitle12:hover, #fsstitle13:hover, #fsstitle14:hover, #fsstitle15:hover {
+#fsstitle1:hover, #fsstitle2:hover, #fsstitle3:hover, #fsstitle4:hover, #fsstitle5:hover, #fsstitle6:hover, #fsstitle7:hover, #fsstitle8:hover, #fsstitle9:hover, #fsstitle10:hover, #fsstitle11:hover, #fsstitle12:hover, #fsstitle13:hover, #fsstitle14:hover, #fsstitle15:hover, .fsstitle:hover {
 	color: #a4d7f4;
 	font-weight: bold;
 }
@@ -405,7 +415,6 @@ p {
 .video-navigation a,
 .video-navigation-mobile a {
 	font-family: Montserrat, sans-serif;
-	padding: 0 .5em;
 	color: #222;
 }
 
@@ -441,26 +450,12 @@ p {
 	align-items: center;
 	background-color: #6abdef;
 	font-family: Montserrat, sans-serif;
+	font-size: 18px;
 	padding: 0 .5em;
 }
 
 .video-navigation-mobile.minimized {
 	bottom: 0;
-}
-
-.video-navigation-mobile-top {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	display: none;
-	z-index: 1;
-	justify-content: space-around;
-	text-align: center;
-	align-items: center;
-	background-color: #666;
-	font-family: Montserrat, sans-serif;
-	padding: 0 .5em;
 }
 
 /* Positions and resizes video */
@@ -582,9 +577,9 @@ div#container {
 }
 
 #phoneme-explanation {
+	display: inline-block;
 	border-radius: 0 0 15px 15px;
 	padding: 1em;
-	margin-bottom: 1em;
 }
 
 #video-phoneme-explanation {
@@ -637,8 +632,8 @@ button.recorder {
 
 /* Audio Recorder */
 object#recorderApp {
-	position: fixed;
-	top: 125px;
+	position: absolute;
+	top: 140px;
 	left: 0;
 	z-index: 999;
 }
@@ -701,19 +696,32 @@ button.help {
 /* pop-up help text box */
 .help-text {
 	display: block;
+	visibility: hidden;
+	opacity: 0;
 	width: 400px;
-	position: absolute;
-	left: 200px;
-	top: 25px;
+    position: absolute;
+    left: 10px;
+    top: -110px;
 	padding: 10px;
 	font-size: .8em;
-	line-height: 1.2em;
-	text-align: left;
-	color: black;
-	background-color: #9AD3F5;
-	border-radius: 0 15px 15px 15px;
+	background-color: #fff;
+	border-radius: 15px;
 	-webkit-box-shadow: 1px 5px 5px rgba(0,0,0,0.2);
 	box-shadow: 1px 5px 5px rgba(0,0,0,0.2);
+	-moz-transition: all .5s ease-in;
+	-ms-transition: all .5s ease-in;
+	-o-transition: all .5s ease-in;
+	-webkit-transition: all .5s ease-in;
+	transition: all .5s ease-in;
+}
+
+a#help:hover + .help-text {
+	visibility: visible;
+	opacity: 0.9;
+}
+
+.video-navigation.minimized a#help:hover + .help-text {
+    top: 50px;
 }
 
 .level {
@@ -872,6 +880,10 @@ button.help {
 	#video {
 		width: 515px;
 	}
+	
+	.vjs-big-play-button {
+		font-size: 8em !important;
+	}
 
 	.video-frame.minimized {
 		width: 420px;
@@ -900,10 +912,6 @@ button.help {
 
 	#video.minimized {
 		width: 360px;
-	}
-
-	.vjs-big-play-button {
-		font-size: 8em !important;
 	}
 }
 
@@ -1040,6 +1048,15 @@ button.help {
 
 	.vjs-big-play-button {
 		font-size: 6em !important;
+	}
+
+	div.phoneme-grid {
+		width: 100%;
+	}
+
+	.entry-content.shifted a.floating-box {
+		width: 31%;
+		height: auto;
 	}
 
 }
@@ -1185,14 +1202,20 @@ button.help {
 		font-size: 26px;
 	}
 	
-	
-	span.recorder,
-	div#flashcontent {
-		display: none;
+	div#container,
+	div.exercise {
+		width: 110%;
+		left: -5%;
+		position: relative;
 	}
 
 	.vjs-big-play-button {
 		font-size: 5em !important;
+	}
+
+	span.recorder,
+	div#flashcontent {
+		display: none;
 	}
 
 }
