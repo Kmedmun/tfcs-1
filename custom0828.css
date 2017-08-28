@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Muli');
-
 /*Look for the following code with some changes that are done for mobile.
 
 http://stackoverflow.com/questions/12716525/sibling-divs-match-height-in-container/12716592#12716592
@@ -7,19 +5,6 @@ http://stackoverflow.com/questions/526294/how-might-i-force-a-floating-div-to-ma
 http://stackoverflow.com/questions/2997767/how-do-i-keep-two-divs-that-are-side-by-side-the-same-height
 http://stackoverflow.com/questions/12912604/make-one-divs-height-match-anothers
 */
-
-/*Code for practice exercises. Must be refactored!!!*/
-.bold:hover {
-	font-weight: bold;
-}
-
-.green {
-    background-color: #388E3C;
-}
-
-.red {
-    background-color: #FF5252;
-}
 
 /*Code to adjust the position of the number/bullet next to a SoundCite button*/
 span.soundcite-loaded {
@@ -41,29 +26,6 @@ span.soundcite-loaded {
 	width: 18%;
 	margin: 1%;
 	height: 9em;
-}
-
-select#dropdown {
-	/* from http://stackoverflow.com/questions/1895476/how-to-style-a-select-dropdown-with-css-only-without-javascript/5809186#5809186 */
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	-webkit-border-radius: 2px;
-	-webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-	-webkit-padding-end: 20px;
-	-webkit-padding-start: 2px;
-	-webkit-user-select: none;
-	background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
-	background-position: 99% center;
-	background-repeat: no-repeat;
-	border: 1px solid #AAA;
-	color: #555;
-	font-size: inherit;
-	margin: 20px 0;
-	overflow: hidden;
-	padding: 5px 10px;
-	text-overflow: ellipsis;
-	white-space: nowrap;
 }
 
 /*Code to reveal FSS descriptions*/
@@ -361,21 +323,21 @@ li#menu-item-290.menu-item.menu-item-type-custom.menu-item-object-custom.menu-it
 
 /*Code to change the font of the website.*/
 .site-title {
-	font-family: "Century Gothic", CenturyGothic, "Muli", AppleGothic, sans-serif;
+	font-family: Century Gothic, sans-serif;
 	font-size: 35px;
 	text-transform: none;
 	padding-left: 5px;
 	white-space: nowrap;
+
 }
 
 /*Code to change the font of the paragraphs in the website.*/
-/* Does this need to be modified to incorporate sans-serif fallback? */
 p {
-	font-family: "Century Gothic", sans-serif;
+	font-family: Century Gothic;
 }
 
 .entry {
-	font-family: "Century Gothic", sans-serif;
+	font-family: Century Gothic;
 }
 
 /*Code for resizing title area box to give "Tools for Clear Speech" more space.*/
@@ -436,7 +398,7 @@ p {
 /*********************************/
 /* Video layout and navigation, in TfCS to-go pronunciation pages */
 /*********************************/
-#video-navigation {
+.video-navigation {
 	position: relative;
 	top: 0;
 	display: inline-block;
@@ -448,16 +410,20 @@ p {
 	background-color: #6abdef;
 	width: 33%;
 	border-radius: 15px 0 0 0;
-	font-family: Montserrat, sans-serif;
-	font-size: 26px;
 }
 
-#video-navigation a {
+.video-navigation a,
+.video-navigation-mobile a {
+	font-family: Montserrat, sans-serif;
 	color: #222;
+}
+
+.video-navigation-button {
+	font-size: 26px;
 } 
 
 /* Minimized layout, triggered by scroll using jQuery- see tfcs_interface.js */
-#video-navigation.minimized {
+.video-navigation.minimized {
 	position: fixed;
 	top: 75px;
 	display: flex;
@@ -465,11 +431,31 @@ p {
 	height: 2em;
 	line-height: 1em;
 	border-radius: 0;
-	font-size: 22px;
 }
 
-body.admin-bar #video-navigation.minimized {
-	top: 107px;
+.video-navigation.minimized .video-navigation-button {
+	font-size: 22px;
+} 
+
+/* Bottom controls that appear in mobile view */
+.video-navigation-mobile {
+	display: none;
+	position: fixed;
+	bottom: -100px;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+	justify-content: space-around;
+	text-align: center;
+	align-items: center;
+	background-color: #6abdef;
+	font-family: Montserrat, sans-serif;
+	font-size: 18px;
+	padding: 0 .5em;
+}
+
+.video-navigation-mobile.minimized {
+	bottom: 0;
 }
 
 /* Positions and resizes video */
@@ -482,14 +468,9 @@ body.admin-bar #video-navigation.minimized {
 .video-frame.minimized {
 	position: fixed;
 	width: 500px;
-	top: 125px;
 	right: 5px;
 	border-radius: 5px;
 	box-shadow: 0 5px 10px rgba(0,0,0,.2);
-}
-
-.video-frame.minimized.hidden {
-	top: -1000px;
 }
 
 #video {
@@ -498,7 +479,6 @@ body.admin-bar #video-navigation.minimized {
 	height: 100%;
 	margin: auto;
 	border-radius: 0 15px 0 0;
-	z-index: 1;
 }
 
 #video.minimized {
@@ -516,22 +496,35 @@ body.admin-bar #video-navigation.minimized {
 }
 
 .vjs-big-play-button {
+	font-size: 9em !important;
 	width: 1.5em !important;
-	margin-left: -0.75em !important;
-	border-radius: 1em !important;
+	top: 35% !important;
+	left: 40% !important;
+	border-radius: 1.5em !important;
+}
+
+.video-frame.minimized .vjs-big-play-button {
+	font-size: 6em !important;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
 }
 
 .vjs-paused .vjs-big-play-button {
 	display:block !important;
 }
 
-.vjs-volume-menu-button {
-	display:none;
+.vjs-play-control,
+.vjs-fullscreen-control {
+	display:none !important;
 }
 
-video::-webkit-media-controls-start-playback-button {
-	display: none !important;
+/*
+.vjs-playback-rate-value:before {
+	content: "Playback Speed: "
 }
+*/
 
 .entry-content.shifted {
 	position: relative;
@@ -541,10 +534,8 @@ video::-webkit-media-controls-start-playback-button {
 
 div#phoneme-container {
 	display: flex;
-}
-
-.entry-content.shifted div#phoneme-container {
-	display: block;
+	min-height: 400px;
+	max-height: 429px;
 }
 
 span#top {
@@ -564,7 +555,7 @@ span.linebreak:before {
 	content: "\A";
 }
 
-div#video-navigation.minimized div.video-navigation-button span.linebreak:before {
+.entry-content.shifted div.video-navigation-button span.linebreak:before {
 	content: " | ";
 }
 
@@ -585,22 +576,22 @@ div#container {
 	top: -2em;
 }
 
-div#phoneme-explanation {
+#phoneme-explanation {
 	display: inline-block;
 	border-radius: 0 0 15px 15px;
 	padding: 1em;
 }
 
-div#video-phoneme-explanation {
+#video-phoneme-explanation {
 	border-radius: 0 0 5px 5px;
 	padding: .5em;
 	font-size: .8em;
-	max-height: 32vh;
+	max-height: 70vh;
 	overflow-y: auto;
 	display: none;
 }
 
-.entry-content.shifted div#phoneme-explanation {
+.entry-content.shifted #phoneme-explanation {
 	visibility: hidden;
 }
 
@@ -608,29 +599,35 @@ div#video-phoneme-explanation {
 	box-shadow: none;
 }
 
-.entry-content.shifted div#video-phoneme-explanation {
+.entry-content.shifted #video-phoneme-explanation {
 	display: block;
 }
 
 /* Transitions */
-/*#video-navigation,*/
-button.recorder,
-.video-frame,
-.entry-content,
-.video-frame.minimized .vjs-big-play-button {
-	-moz-transition: all .2s linear;
-	-ms-transition: all .2s linear;
-	-o-transition: all .2s linear;
-	-webkit-transition: all .2s linear;
-	transition: all .2s linear;
+.video-navigation,
+.video-navigation-mobile {
+	-moz-transition: all .2s ease;
+	-ms-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	-webkit-transition: all .2s ease;
+	transition: all .2s ease;
 }
 
-.help-text {
-	-moz-transition: all .5s ease;
-	-ms-transition: all .5s ease;
-	-o-transition: all .5s ease;
-	-webkit-transition: all .5s ease;
-	transition: all .5s ease;
+.video-frame,
+.entry-content {
+	-moz-transition: all .4s linear;
+	-ms-transition: all .4s linear;
+	-o-transition: all .4s linear;
+	-webkit-transition: all .4s linear;
+	transition: all .4s linear;
+}
+
+button.recorder {
+	-moz-transition: all .2s ease-in;
+	-ms-transition: all .2s ease-in;
+	-o-transition: all .2s ease-in;
+	-webkit-transition: all .2s ease-in;
+	transition: all .2s ease-in;
 }
 
 /* Audio Recorder */
@@ -646,24 +643,8 @@ div.recorder {
 	z-index: 1000;
 }
 
-/*span.recorder {
+span.recorder {
 	height: 38px;
-}*/
-
-span.recorder.mobile {
-	display: none;
-}
-
-#video-navigation.minimized span.recorder.mobile {
-	display: flex;
-}
-
-span.mobile-instruction {
-	display: none;
-}
-
-span.mobile-instruction.mobile {
-	display: inline-block;
 }
 
 button.recorder {
@@ -720,37 +701,42 @@ button.help {
 	width: 400px;
     position: absolute;
     left: 10px;
-    top: -135px;
-	padding: 9px;
-	font-size: 18px;
+    top: -110px;
+	padding: 10px;
+	font-size: .8em;
 	background-color: #fff;
 	border-radius: 15px;
 	-webkit-box-shadow: 1px 5px 5px rgba(0,0,0,0.2);
 	box-shadow: 1px 5px 5px rgba(0,0,0,0.2);
+	-moz-transition: all .5s ease-in;
+	-ms-transition: all .5s ease-in;
+	-o-transition: all .5s ease-in;
+	-webkit-transition: all .5s ease-in;
+	transition: all .5s ease-in;
 }
 
 a#help:hover + .help-text {
 	visibility: visible;
-	opacity: 0.95;
+	opacity: 0.9;
 }
 
-.minimized .help-text {
+.video-navigation.minimized a#help:hover + .help-text {
     top: 50px;
 }
 
 .level {
-	width: 100%;
-	height: 100%;
+	width: 4em;
+	height: 4em;
 	position: relative;
 	left: 0;
 	top: 0;
 }
 
-/*.entry-content.shifted .level {
+.entry-content.shifted .level {
 	width: 2em;
 	height: 2em;	
 }
-*/
+
 .audiolevel {
 	position: absolute;
 	bottom: 0;
@@ -878,33 +864,36 @@ a#help:hover + .help-text {
 		border-left: 2px solid #000;
 	}
 	
+	div#phoneme-container {
+		min-height: 376px;
+	}
+	
 	.anchor {
 		height: 20px;
 		margin-top: -20px;
 	}
 	
-	#video-navigation.minimized {
+	.video-navigation.minimized {
 		top: 0;
-	}
-
-	body.admin-bar #video-navigation.minimized {
-		top: 32px;
 	}
 
 	#video {
 		width: 515px;
 	}
+	
+	.vjs-big-play-button {
+		font-size: 8em !important;
+	}
 
 	.video-frame.minimized {
 		width: 420px;
-		top: 75px;
 	}
 
 	#video.minimized {
 		width: 420px;
 	}
 
-	/*.level,*/
+	.level,
 	button.recorder {
 		width: 3em;
 		height: 3em;
@@ -1011,52 +1000,28 @@ a#help:hover + .help-text {
 		border-left: 2px solid #000;
 	}
 	
+	div#phoneme-container {
+		display: inherit;
+		height: inherit;
+	}
+	
 	.video-frame {
 		width: 100%;
-	}
-
-	.video-js .vjs-tech {
-		border-radius: 0;
 	}
 	
 	#video {
 		border-radius: 0;
 		width: 100%;
 	}
-
-	#video.minimized {
-		border-radius: 0;
-		width: 50%;
-		height: auto;
-		position: fixed;
-		bottom: 5px;
-		right: 5px;
-	}
 	
-	div#phoneme-container {
-		display: block;
-	}
-	
-	#video-navigation {
+	.video-navigation {
 		margin: auto;
+		padding: 0 0 1em 0;
 		display: block;
 		width: 100%;
-		height: 351px;
 		border-radius: 15px 15px 0 0;
 	}
-
-	#video-navigation.minimized {
-		font-size: 20px;
-	} 	
-
-	#video-navigation.mobile {
-		height: 300px;
-	}
-
-	#video-navigation.mobile.minimized {
-		height: 2em;
-	}
-
+	
 	.video-textcontent {
 		padding: 25px 0 100px;
 	}
@@ -1067,12 +1032,22 @@ a#help:hover + .help-text {
 	}
 	
 	.help-text {
+		position: relative;
 		top: 0;
+		border-radius: 15px;
 	}
 	
 	.site-title {
 		font-size: 30px;
 		white-space: initial;
+	}
+	
+	.video-navigation-mobile {
+		display: flex;
+	}
+
+	.vjs-big-play-button {
+		font-size: 6em !important;
 	}
 
 	div.phoneme-grid {
@@ -1234,15 +1209,12 @@ a#help:hover + .help-text {
 		position: relative;
 	}
 
-	.help-text {
-	    top: 75px;
+	.vjs-big-play-button {
+		font-size: 5em !important;
 	}
 
-	#video-navigation.minimized {
-		font-size: 18px;
-	}
-
-	#video-navigation.minimized .phoneme-link {
+	span.recorder,
+	div#flashcontent {
 		display: none;
 	}
 
@@ -1268,11 +1240,5 @@ a#help:hover + .help-text {
 	a.floating-box {
 		padding: 15px 5px;
 	}
-
-	div.minimized button.recorder {
-	width: 1.5em;
-	height: 1.5em;
-	border-radius: 0.3em;
-}
 
 }
