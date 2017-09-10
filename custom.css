@@ -459,7 +459,7 @@ p {
 	font-size: 26px;
 	width: 35%;
 	height: 418px;
-	border-bottom: 2px solid;
+	border-bottom: solid 2px;
 	padding: 2em 0;
 	border-radius: 15px 0 0 0;
 }
@@ -476,12 +476,12 @@ p {
 	border-radius: 0;
 }
 
-#video-navigation.minimized {
-	opacity: .2;
-}
-
 .entry-content.shifted #video-navigation-minimized {
 	display: flex;
+}
+
+.entry-content.shifted #video-navigation {
+	opacity: .2;
 }
 
 body.admin-bar #video-navigation-minimized {
@@ -495,7 +495,7 @@ body.admin-bar #video-navigation-minimized {
 	float: right;
 }
 
-.video-frame.minimized {
+.entry-content.shifted .video-frame {
 	position: fixed;
 	width: 500px;
 	top: 125px;
@@ -504,7 +504,7 @@ body.admin-bar #video-navigation-minimized {
 	box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
 
-.video-frame.minimized.hidden {
+.entry-content.shifted .video-frame.hidden {
 	top: -1000px;
 }
 
@@ -512,7 +512,6 @@ body.admin-bar #video-navigation-minimized {
 	display: block;
 	margin: auto;
 	border-radius: 0 15px 0 0;
-	z-index: 1;
 }
 
 /* override default video sizing behavior */
@@ -524,7 +523,7 @@ body.admin-bar #video-navigation-minimized {
     padding-top: 0 !important; 
 }
 
-#video.minimized {
+.entry-content.shifted #video {
 	border-radius: 5px 5px 0 0;
 	width: 500px;
 }
@@ -532,9 +531,10 @@ body.admin-bar #video-navigation-minimized {
 .video-js .vjs-tech {
 	position: relative !important;
 	border-radius: 0 15px 0 0;
+	z-index: 1;
 }
 
-.video-frame.minimized .vjs-tech {
+.entry-content.shifted .video-frame .vjs-tech {
 	border-radius: 5px 5px 0 0;
 }
 
@@ -587,7 +587,7 @@ span.linebreak:before {
 	content: "\A";
 }
 
-div#video-navigation.minimized div.video-navigation-button span.linebreak:before {
+.entry-content.shifted div#video-navigation div.video-navigation-button span.linebreak:before {
 	content: " | ";
 }
 
@@ -618,7 +618,7 @@ div#video-phoneme-explanation {
 	border-radius: 0 0 5px 5px;
 	padding: .5em;
 	font-size: .8em;
-	max-height: 32vh;
+	/*max-height: 32vh;*/
 	overflow-y: auto;
 	display: none;
 }
@@ -641,7 +641,7 @@ button.recorder,
 .video-frame,
 .entry-content,
 .entry-content.shifted,
-.video-frame.minimized .vjs-big-play-button {
+.entry-content.shifted .video-frame .vjs-big-play-button {
 	-moz-transition: all .2s linear;
 	-ms-transition: all .2s linear;
 	-o-transition: all .2s linear;
@@ -678,7 +678,7 @@ span.recorder.mobile {
 	display: none;
 }
 
-#video-navigation.minimized span.recorder.mobile {
+.entry-content.shifted #video-navigation span.recorder.mobile {
 	display: flex;
 }
 
@@ -919,7 +919,7 @@ a#help:hover + .help-text {
 		top: 0;
 	}
 
-	body.admin-bar #video-navigation.minimized {
+	body.admin-bar .entry-content.shifted #video-navigation {
 		top: 32px;
 	}
 
@@ -928,12 +928,12 @@ a#help:hover + .help-text {
 		height: 365px;
 	}
 
-	.video-frame.minimized {
+	.entry-content.shifted .video-frame {
 		width: 420px;
 		top: 50px;
 	}
 
-	#video.minimized {
+	.entry-content.shifted #video {
 		width: 420px;
 	}
 
@@ -950,11 +950,11 @@ a#help:hover + .help-text {
 		width: 76%;
 	}
 
-	.video-frame.minimized {
+	.entry-content.shifted .video-frame {
 		width: 360px;
 	}
 
-	#video.minimized {
+	.entry-content.shifted #video {
 		width: 360px;
 	}
 }
@@ -1051,20 +1051,21 @@ a#help:hover + .help-text {
 	.video-js .vjs-tech {
 		border-radius: 0;
 	}
-	
-	#video {
-		border-radius: 0;
-		width: 100%;
-	}
 
-	#video.minimized {
-		border-radius: 0;
-		width: 50%;
-		height: auto;
-		position: fixed;
+	.video-js .vjs-tech.minimized {
+		top: auto;
+		left: auto;
 		bottom: 5px;
 		right: 5px;
+		width: 50%;
+		height: auto;
+		position: fixed !important;
 	}
+	
+/*	#video {
+		border-radius: 0;
+		width: 100%;
+	}*/
 	
 	div#phoneme-container {
 		display: block;
@@ -1078,17 +1079,22 @@ a#help:hover + .help-text {
 		border-radius: 15px 15px 0 0;
 	}
 
-	#video-navigation.minimized {
-		font-size: 20px;
-	} 	
+	.video-frame.minimized .video-dimensions {
+		width: 50%;
+		height: auto;
+	}
 
-	#video-navigation.mobile {
+/*	#video-navigation.minimized {
+		font-size: 20px;
+	} 	*/
+
+/*	#video-navigation.mobile {
 		height: 300px;
 	}
 
 	#video-navigation.mobile.minimized {
 		height: 2em;
-	}
+	}*/
 
 	.video-textcontent {
 		padding: 25px 0 100px;
@@ -1271,9 +1277,9 @@ a#help:hover + .help-text {
 	    top: 75px;
 	}
 
-	#video-navigation.minimized {
+/*	#video-navigation.minimized {
 		font-size: 18px;
-	}
+	}*/
 
 	.no-mobile {
 		display: none;

@@ -113,10 +113,10 @@ jQuery(document).ready(function($) {
         window.videoNavHeight = 336;
     }else{window.videoNavHeight = 351;}
 
-    if(window.innerWidth <= 960){
-        $('#video-frame').css("height", window.innerWidth*0.725 + "px");
-        $('#phoneme-container').css("height", window.innerWidth*0.725 + window.videoNavHeight + "px");
-    }else{$('#container').css("height", document.getElementById("video-frame").offsetHeight+document.getElementById("phoneme-explanation").offsetHeight+60+"px");}
+    // if(window.innerWidth <= 960){
+    //     $('#video-frame').css("height", window.innerWidth*0.725 + "px");
+    //     $('#phoneme-container').css("height", window.innerWidth*0.725 + window.videoNavHeight + "px");
+    // }else{$('#container').css("height", document.getElementById("video-frame").offsetHeight+document.getElementById("phoneme-explanation").offsetHeight+60+"px");}
 
     // adapted from Jim W's code: http://stackoverflow.com/a/17494943
     // change layout based on amount of Y scroll
