@@ -1,7 +1,7 @@
 function moveThings() {
     // stuff below move around in desktop view, as user scrolls down
     if(window.innerWidth > 960) {
-        if(window.pageYOffset>window.minimizeTriggerPosition-200){
+        if(window.pageYOffset>window.minimizeTriggerPosition-250){
             // jQuery('#video-navigation').addClass('minimized');
             // jQuery('#video-frame').addClass('minimized');
             // jQuery('#video').addClass('minimized');
@@ -21,10 +21,10 @@ function moveThings() {
         // mobile view is simpler
         if(window.pageYOffset>window.mobileVideoMinimizePosition && window.pageYOffset<window.mobileVideoMinimizeEndPosition){
             // jQuery('#video-navigation').addClass('minimized');
-            jQuery('#video_html5_api').addClass('minimized');
+            jQuery('#video').addClass('minimized');
         }else{
             // jQuery('#video-navigation').removeClass('minimized');
-            jQuery('#video_html5_api').removeClass('minimized');
+            jQuery('#video').removeClass('minimized');
         }
         jQuery('#video-frame').removeClass('minimized');
         jQuery('.entry-content').removeClass('shifted');
