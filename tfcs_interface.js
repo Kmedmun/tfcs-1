@@ -36,15 +36,17 @@ window.onscroll=function(){
 };
 
 window.onresize=function(){
-    if(window.innerWidth <= 960){
-        jQuery('#container').css("height", "");
-        // jQuery('#video-frame').css("height", window.innerWidth*0.725 + "px");
-        jQuery('#phoneme-container').css("height", window.innerWidth*0.725 + window.videoNavHeight + "px");
-    } else {
-        // jQuery('#video-frame').css("height", "");        
-        jQuery('#phoneme-container').css("height", "");
-        jQuery('#container').css("height", document.getElementById("video-frame").offsetHeight+document.getElementById("phoneme-explanation").offsetHeight+60+"px");
-    }
+    jQuery('#video-frame').css('height', document.getElementById("video_html5_api").offsetHeight);
+    // if(window.innerWidth <= 960){
+    //     jQuery('#container').css("height", "");
+    //     // jQuery('#video-frame').css("height", window.innerWidth*0.725 + "px");
+    //     jQuery('#phoneme-container').css("height", window.innerWidth*0.725 + window.videoNavHeight + "px");
+    // } else {
+
+    //     // jQuery('#video-frame').css("height", "");        
+    //     jQuery('#phoneme-container').css("height", "");
+    //     jQuery('#container').css("height", document.getElementById("video-frame").offsetHeight+document.getElementById("phoneme-explanation").offsetHeight+60+"px");
+    // }
     moveThings();
 };
 
@@ -130,6 +132,6 @@ jQuery(document).ready(function($) {
     window.mobileVideoMinimizePosition = findPosY(document.getElementById("video-frame")) + window.innerWidth;
     window.mobileVideoMinimizeEndPosition = findPosY(document.getElementsByClassName("phoneme-grid")[0]);
 
-    setTimeout(function() {$('#video-frame').css('height', document.getElementById("video_html5_api").offsetHeight);}, 1000);
+    setTimeout(function() {$('#video-frame').css('height', document.getElementById("video_html5_api").offsetHeight);}, 200);
 
 });
