@@ -125,7 +125,7 @@ jQuery(document).ready(function($) {
     window.minimizeTriggerPosition=-1;
     // window.vid = document.getElementById('video-frame');
     window.minimizeTrigger = document.getElementById('phoneme-explanation');
-    window.videoHiddenTriggerPosition = findPosY(document.getElementById('whats-next'));
+    window.videoHiddenTriggerPosition = findPosY(document.getElementById('whats-next'))+200;
 
     if(window.minimizeTriggerPosition<0)window.minimizeTriggerPosition=findPosY(window.minimizeTrigger);
 
