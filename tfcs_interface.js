@@ -113,6 +113,8 @@ jQuery(document).ready(function($) {
         window.videoNavHeight = 336;
     }else{window.videoNavHeight = 351;}
 
+    $('#video-frame').css('height', document.getElementById("video_html5_api").offsetHeight);
+
     // if(window.innerWidth <= 960){
     //     $('#video-frame').css("height", window.innerWidth*0.725 + "px");
     //     $('#phoneme-container').css("height", window.innerWidth*0.725 + window.videoNavHeight + "px");
