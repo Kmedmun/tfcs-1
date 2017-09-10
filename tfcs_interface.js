@@ -36,7 +36,7 @@ window.onscroll=function(){
 };
 
 window.onresize=function(){
-    jQuery('#video-frame').css('height', document.getElementById("video_html5_api").offsetHeight);
+    // jQuery('#video-frame').css('height', document.getElementById("video_html5_api").offsetHeight);
     // if(window.innerWidth <= 960){
     //     jQuery('#container').css("height", "");
     //     // jQuery('#video-frame').css("height", window.innerWidth*0.725 + "px");
@@ -132,6 +132,6 @@ jQuery(document).ready(function($) {
     window.mobileVideoMinimizePosition = findPosY(document.getElementById("video-frame")) + window.innerWidth;
     window.mobileVideoMinimizeEndPosition = findPosY(document.getElementsByClassName("phoneme-grid")[0]);
 
-    setTimeout(function() {$('#video-frame').css('height', document.getElementById("video_html5_api").offsetHeight);}, 200);
+    // setTimeout(function() {$('#video-frame').css('height', document.getElementById("video_html5_api").offsetHeight);}, 200);
 
 });
