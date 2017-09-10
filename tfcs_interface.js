@@ -1,12 +1,10 @@
-
-
 function moveThings() {
     // stuff below move around in desktop view, as user scrolls down
     if(window.innerWidth > 960) {
         if(window.pageYOffset>window.minimizeTriggerPosition-200){
-            jQuery('#video-navigation').addClass('minimized');
-            jQuery('#video-frame').addClass('minimized');
-            jQuery('#video').addClass('minimized');
+            // jQuery('#video-navigation').addClass('minimized');
+            // jQuery('#video-frame').addClass('minimized');
+            // jQuery('#video').addClass('minimized');
             jQuery('.entry-content').addClass('shifted');
             if(window.pageYOffset>window.videoHiddenTriggerPosition){
                 jQuery('#video-frame').addClass('hidden');
@@ -14,19 +12,19 @@ function moveThings() {
                 jQuery('#video-frame').removeClass('hidden');
             }
         }else{
-            jQuery('#video-navigation').removeClass('minimized');
-            jQuery('#video-frame').removeClass('minimized');
-            jQuery('#video').removeClass('minimized');
+            // jQuery('#video-navigation').removeClass('minimized');
+            // jQuery('#video-frame').removeClass('minimized');
+            // jQuery('#video').removeClass('minimized');
             jQuery('.entry-content').removeClass('shifted');
         }
     }else{
         // mobile view is simpler
         if(window.pageYOffset>window.mobileVideoMinimizePosition && window.pageYOffset<window.mobileVideoMinimizeEndPosition){
-            jQuery('#video-navigation').addClass('minimized');
-            jQuery('#video-frame').addClass('minimized');
+            // jQuery('#video-navigation').addClass('minimized');
+            jQuery('#video_html5_api').addClass('minimized');
         }else{
-            jQuery('#video-navigation').removeClass('minimized');
-            jQuery('#video-frame').removeClass('minimized');
+            // jQuery('#video-navigation').removeClass('minimized');
+            jQuery('#video_html5_api').removeClass('minimized');
         }
         jQuery('#video-frame').removeClass('minimized');
         jQuery('.entry-content').removeClass('shifted');
