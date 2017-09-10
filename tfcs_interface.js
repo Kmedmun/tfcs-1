@@ -1,7 +1,9 @@
+
+
 function moveThings() {
     // stuff below move around in desktop view, as user scrolls down
     if(window.innerWidth > 960) {
-        if(window.pageYOffset>window.minimizeTriggerPosition-300){
+        if(window.pageYOffset>window.minimizeTriggerPosition-200){
             jQuery('#video-navigation').addClass('minimized');
             jQuery('#video-frame').addClass('minimized');
             jQuery('#video').addClass('minimized');

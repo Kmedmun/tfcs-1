@@ -436,39 +436,50 @@ p {
 /*********************************/
 /* Video layout and navigation, in TfCS to-go pronunciation pages */
 /*********************************/
+#video-navigation,
+#video-navigation-minimized {
+	z-index: 1;
+	background-color: #6abdef;
+	font-family: Montserrat, sans-serif;
+	left: 0;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+}
+
+#video-navigation a,
+#video-navigation-minimized a {
+	color: #222;
+} 
+
 #video-navigation {
 	position: relative;
 	top: 0;
 	display: inline-block;
-	z-index: 1;
-	justify-content: space-around;
-	text-align: center;
-	align-items: center;
-	left: 0;
-	background-color: #6abdef;
-	width: 33%;
-	border-radius: 15px 0 0 0;
-	font-family: Montserrat, sans-serif;
 	font-size: 26px;
+	width: 33%;
+	height: 372px;
+	padding: 2em 0;
+	border-radius: 15px 0 0 0;
 }
 
-#video-navigation a {
-	color: #222;
-} 
-
-/* Minimized layout, triggered by scroll using jQuery- see tfcs_interface.js */
-#video-navigation.minimized {
+/* Minimized layout is triggered by scroll position using jQuery- see tfcs_interface.js */
+#video-navigation-minimized {
 	position: fixed;
 	top: 75px;
-	display: flex;
+	display: none;
+	font-size: 22px;
+	line-height: 1em;
 	width: 100%;
 	height: 2em;
-	line-height: 1em;
 	border-radius: 0;
-	font-size: 22px;
 }
 
-body.admin-bar #video-navigation.minimized {
+.entry-content.shifted #video-navigation-minimized {
+	display: flex;
+}
+
+body.admin-bar #video-navigation-minimized {
 	top: 107px;
 }
 
@@ -492,9 +503,9 @@ body.admin-bar #video-navigation.minimized {
 	top: -1000px;
 }
 
-#video {
+video {
 	display: block;
-	width: 590px;
+	width: 100%;
 	height: 100%;
 	margin: auto;
 	border-radius: 0 15px 0 0;
@@ -601,7 +612,7 @@ div#video-phoneme-explanation {
 }
 
 .entry-content.shifted div#phoneme-explanation {
-	visibility: hidden;
+	opacity: 0.2;
 }
 
 .entry-content.shifted #container {
@@ -617,6 +628,7 @@ div#video-phoneme-explanation {
 button.recorder,
 .video-frame,
 .entry-content,
+.entry-content.shifted,
 .video-frame.minimized .vjs-big-play-button {
 	-moz-transition: all .2s linear;
 	-ms-transition: all .2s linear;
@@ -783,6 +795,13 @@ a#help:hover + .help-text {
 }
 
 
+/* adjust original theme */
+
+.genesis-nav-menu a {
+	padding: 27px 12px;
+}
+
+
 /***********************************
 ************************************
 ***********************************/
@@ -793,6 +812,7 @@ a#help:hover + .help-text {
 		width: 85%;
 	}
 }
+
 @media only screen and (max-width: 1280px) {
 	.site-inner,
 	.wrap {
@@ -1242,7 +1262,7 @@ a#help:hover + .help-text {
 		font-size: 18px;
 	}
 
-	#video-navigation.minimized .phoneme-link {
+	.no-mobile {
 		display: none;
 	}
 
