@@ -23,10 +23,10 @@ function moveThings() {
         // mobile view is simpler
         if(window.pageYOffset>window.mobileVideoMinimizePosition && window.pageYOffset<window.mobileVideoMinimizeEndPosition){
             jQuery('#video-navigation').addClass('minimized');
-            jQuery('#video').addClass('minimized');
+            jQuery('#video-frame').addClass('minimized');
         }else{
             jQuery('#video-navigation').removeClass('minimized');
-            jQuery('#video').removeClass('minimized');
+            jQuery('#video-frame').removeClass('minimized');
         }
         jQuery('#video-frame').removeClass('minimized');
         jQuery('.entry-content').removeClass('shifted');
@@ -40,7 +40,7 @@ window.onscroll=function(){
 window.onresize=function(){
     if(window.innerWidth <= 960){
         jQuery('#container').css("height", "");
-        jQuery('#video-frame').css("height", window.innerWidth*0.725 + "px");
+        // jQuery('#video-frame').css("height", window.innerWidth*0.725 + "px");
         jQuery('#phoneme-container').css("height", window.innerWidth*0.725 + window.videoNavHeight + "px");
     } else {
         jQuery('#video-frame').css("height", "");        
