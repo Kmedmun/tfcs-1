@@ -43,7 +43,7 @@ window.onresize=function(){
         // jQuery('#video-frame').css("height", window.innerWidth*0.725 + "px");
         jQuery('#phoneme-container').css("height", window.innerWidth*0.725 + window.videoNavHeight + "px");
     } else {
-        jQuery('#video-frame').css("height", "");        
+        // jQuery('#video-frame').css("height", "");        
         jQuery('#phoneme-container').css("height", "");
         jQuery('#container').css("height", document.getElementById("video-frame").offsetHeight+document.getElementById("phoneme-explanation").offsetHeight+60+"px");
     }
