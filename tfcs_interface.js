@@ -70,6 +70,8 @@ function findPosY(obj) {
 // appends an audio element to playback and download recording
 function createAudioElement(blobUrl) {
     window.audioEl = document.createElement('audio');
+    window.audioEl.onpause = function() {jQuery("button.playback").removeClass("playing");};
+    window.audioEl.onplay = function() {jQuery("button.playback").addClass("playing");};
     window.sourceEl = document.createElement('source');
     window.sourceEl.src = blobUrl;
     window.sourceEl.type = 'audio/webm';
@@ -130,7 +132,6 @@ function playBack() {
             window.audioEl.pause();
             window.audioEl.currentTime = 0;
         }
-    jQuery("button.playback").toggleClass("playing");
     } else {
         console.log('no recordings yet')
     }
