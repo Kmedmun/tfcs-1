@@ -22,9 +22,11 @@ function moveThings() {
         if(window.pageYOffset>window.mobileVideoMinimizePosition && window.pageYOffset<window.mobileVideoMinimizeEndPosition){
             // jQuery('#video-navigation').addClass('minimized');
             jQuery('#video').addClass('minimized');
+            // jQuery('#video').css('width', '50% !important');
         }else{
             // jQuery('#video-navigation').removeClass('minimized');
             jQuery('#video').removeClass('minimized');
+            // jQuery('#video').css('width', '100% !important');
         }
         jQuery('#video-frame').removeClass('minimized');
         jQuery('.entry-content').removeClass('shifted');
@@ -62,6 +64,59 @@ function findPosY(obj) {
     else if (obj.y)
         curtop += obj.y;
     return curtop;
+}
+
+// modified from http://air.ghost.io/recording-to-an-audio-file-using-html5-and-js/
+// appends an audio element to playback and download recording
+function createAudioElement(blobUrl) {
+    window.audioEl = document.createElement('audio');
+    window.sourceEl = document.createElement('source');
+    window.sourceEl.src = blobUrl;
+    window.sourceEl.type = 'audio/webm';
+    window.audioEl.appendChild(sourceEl);
+}
+
+// create media recorder instance to initialize recording
+window.recorder = new MediaRecorder(stream);
+
+// request permission to access audio stream
+function startRecord() {
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+        // store streaming data chunks in array
+        const chunks = [];
+        // function to be called when data is received
+        window.recorder.ondataavailable = e => {
+          // add stream data to chunks
+          chunks.push(e.data);
+          // if recorder is 'inactive' then recording has finished
+          if (window.recorder.state == 'inactive') {
+              // convert stream data chunks to a 'webm' audio format as a blob
+              const blob = new Blob(chunks, { type: 'audio/webm' });
+              // convert blob to URL so it can be assigned to a audio src attribute
+              createAudioElement(URL.createObjectURL(blob));
+          }
+        };
+        // start recording with delay time between receiving 'ondataavailable' events
+        window.recorder.start(500);
+      }).catch(console.error);
+}
+
+function stopRecord() {
+    window.recorder.stop();
+}
+
+var recording = true;
+function toggleRecord() {
+    if (recording) {
+        stopRecord();
+    } else {
+        startRecord();
+    }
+    recording = !recording;
+}
+
+function playBack() {
+    window.audioEl.play();
 }
 
 /**
