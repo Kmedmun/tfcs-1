@@ -105,7 +105,7 @@ function stopRecord() {
     window.recorder.stop();
 }
 
-var recording = true;
+var recording = false;
 function toggleRecord() {
     if (recording) {
         stopRecord();
@@ -115,8 +115,19 @@ function toggleRecord() {
     recording = !recording;
 }
 
+var playing = false;
 function playBack() {
-    window.audioEl.play();
+    if (window.audioEl) {
+        if (playing) {
+            window.audioEl.pause();
+            window.audioEl.currentTime = 0;
+        } else {
+            window.audioEl.play();
+        }
+        playing = !playing;
+    } else {
+        console.log('no recordings yet')
+    }
 }
 
 /**
