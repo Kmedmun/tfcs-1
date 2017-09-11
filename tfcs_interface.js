@@ -115,16 +115,14 @@ function toggleRecord() {
     recording = !recording;
 }
 
-var playing = false;
 function playBack() {
     if (window.audioEl) {
-        if (playing) {
+        if (window.audioEl.paused) {
+            window.audioEl.play();
+        } else {
             window.audioEl.pause();
             window.audioEl.currentTime = 0;
-        } else {
-            window.audioEl.play();
         }
-        playing = !playing;
     } else {
         console.log('no recordings yet')
     }
