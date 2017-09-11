@@ -41,11 +41,11 @@ span.soundcite-loaded {
 	width: 160%;
 }
 
-.entry-content.shifted a.floating-box {
+/*.entry-content.shifted a.floating-box {
 	width: 18%;
 	margin: 1%;
 	height: 9em;
-}
+}*/
 
 select#dropdown {
 	/* from http://stackoverflow.com/questions/1895476/how-to-style-a-select-dropdown-with-css-only-without-javascript/5809186#5809186 */
@@ -68,6 +68,13 @@ select#dropdown {
 	padding: 5px 10px;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+}
+
+select#dropdown.fixed {
+	position: fixed;
+	margin: 0;
+	top: 75px;
+	width: 880px;
 }
 
 /*Code to reveal FSS descriptions*/
@@ -923,6 +930,11 @@ a#help:hover + .help-text {
 		margin-top: -20px;
 	}
 	
+	select#dropdown.fixed {
+		top: 0;
+		width: 746px;
+	}
+
 	#video-navigation-minimized {
 		top: 0;
 	}
@@ -1125,10 +1137,15 @@ a#help:hover + .help-text {
 		width: 100%;
 	}
 
-	.entry-content.shifted a.floating-box {
+/*	.entry-content.shifted a.floating-box {
 		width: 31%;
 		height: auto;
+	}*/
+	select#dropdown.fixed {
+		left: 5%;
+		width: 90%;
 	}
+
 
 }
 	
@@ -1264,7 +1281,7 @@ a#help:hover + .help-text {
 	a.floating-box {
 		width: 31.333%;
 		margin: 1%;
-		height: 133px;
+		height: 100px;
 		padding: 20px 10px;
 		border: 2px solid #000;
 	}
