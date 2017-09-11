@@ -76,14 +76,14 @@ function createAudioElement(blobUrl) {
     window.audioEl.appendChild(sourceEl);
 }
 
-// create media recorder instance to initialize recording
-window.recorder = new MediaRecorder(stream);
 
 // request permission to access audio stream
 function startRecord() {
     navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
         // store streaming data chunks in array
         const chunks = [];
+        // if nonexistent, create media recorder instance to initialize recording
+        if (!window.recorder) {window.recorder = new MediaRecorder(stream);}
         // function to be called when data is received
         window.recorder.ondataavailable = e => {
           // add stream data to chunks
