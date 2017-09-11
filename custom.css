@@ -554,7 +554,7 @@ body.admin-bar #video-navigation-minimized {
 	display:block !important;
 }
 
-.vjs-volume-menu-button,
+.video-js .vjs-fullscreen-control,
 .vjs-time-control {
 	display:none;
 }
@@ -736,6 +736,10 @@ button.record.recording {
 
 button.playback {
 	background-image: url("../files/2016/06/media-play-8x.png");
+}
+
+button.playback.playing {
+	background-image: url("../files/2017/09/media-pause-8x.png");
 }
 
 button.help {

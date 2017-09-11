@@ -76,9 +76,8 @@ function createAudioElement(blobUrl) {
     window.audioEl.appendChild(sourceEl);
 }
 
-
-// request permission to access audio stream
 function startRecord() {
+    // request permission to access audio stream
     navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
         // store streaming data chunks in array
         const chunks = [];
@@ -113,9 +112,14 @@ function toggleRecord() {
         startRecord();
     }
     recording = !recording;
+    jQuery("button.record").toggleClass("recording");
 }
 
 function playBack() {
+    if (recording) {
+        toggleRecord();
+    }
+
     if (window.audioEl) {
         if (window.audioEl.paused) {
             window.audioEl.play();
@@ -123,6 +127,7 @@ function playBack() {
             window.audioEl.pause();
             window.audioEl.currentTime = 0;
         }
+    jQuery("button.playback").toggleClass("playing");
     } else {
         console.log('no recordings yet')
     }
