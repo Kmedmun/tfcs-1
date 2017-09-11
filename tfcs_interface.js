@@ -125,16 +125,19 @@ function playBack() {
         toggleRecord();
     }
 
-    if (window.audioEl) {
-        if (window.audioEl.paused) {
-            window.audioEl.play();
+    // give a short timeout so that recorded audio blob can be properly put into audio object (and therefore played)
+    setTimeout(function(){
+        if (window.audioEl) {
+            if (window.audioEl.paused) {
+                window.audioEl.play();
+            } else {
+                window.audioEl.pause();
+                window.audioEl.currentTime = 0;
+            }
         } else {
-            window.audioEl.pause();
-            window.audioEl.currentTime = 0;
+            console.log('no recordings yet')
         }
-    } else {
-        console.log('no recordings yet')
-    }
+    }, 50);
 }
 
 /**
