@@ -106,6 +106,9 @@ function stopRecord() {
 
 var recording = false;
 function toggleRecord() {
+    if (window.audioEl && !window.audioEl.paused) {
+        playBack(); // stop playback
+    }
     if (recording) {
         stopRecord();
     } else {
