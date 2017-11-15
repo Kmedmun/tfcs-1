@@ -6,4 +6,5 @@ div.togo-practice button {width: 345px; height:100px; font-size: 22px; text-alig
 div.togo-practice button:hover { background-color: #fff; color: #000; }
 .parallax-pro-blue a, .parallax-pro-blue .entry-title a:hover, .parallax-pro-blue .genesis-nav-menu a:hover, .parallax-pro-blue .genesis-nav-menu .current-menu-item > a, .parallax-pro-blue .genesis-nav-menu .sub-menu a:hover, .parallax-pro-blue .genesis-nav-menu .sub-menu .current-menu-item > a:hover, .parallax-pro-blue .home-odd .featured-content .entry-title a:hover, .parallax-pro-blue .site-footer a:hover, .parallax-pro-blue .site-header .widget-area a:hover { color: #91cd8c; }
 .parallax-pro-blue .footer-widgets { background-color: #91cd8c; }
+a.floating-box { color: #000; }
 .site-title a { background: url(https://cdn.rawgit.com/tfcs/tfcs/master/logotype_green.svg) no-repeat !important; }
