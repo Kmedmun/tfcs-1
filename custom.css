@@ -341,7 +341,7 @@ a.floating-box {
 	padding-bottom: 20px;
 	float: left;
 	font-family: GoodOT, sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 	color: black;
 	text-transform: initial;
 	text-align: center;
@@ -350,6 +350,10 @@ a.floating-box {
 a.floating-box:hover {
 	background-color: black;
 	color: white;
+}
+
+a.floating-box.wide {
+	width: 97%;
 }
 
 .clear {
