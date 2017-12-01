@@ -780,7 +780,7 @@ div#video-phoneme-explanation {
 	border-radius: 0 0 5px 5px;
 	padding: .5em;
 	font-size: .8em;
-	/*max-height: 32vh;*/
+	max-height: 32vh;
 	overflow-y: auto;
 	display: none;
 }
