@@ -163,7 +163,7 @@ span.soundcite-loaded {
 }
 
 /*Code for Language Highlight feature*/
-.mandarin, .cantonese, .fuzhounese, .spanish, .korean, .portuguese, .russian, .french, .arabic, .japanese {
+.language-highlighted {
 	border: 3px solid #44ace8;
 	background-color: #44ace8;
 }
@@ -203,7 +203,7 @@ select#dropdown.fixed {
 }
 
 /*Code to reveal FSS descriptions*/
-#fsstitle1, #fsstitle2, #fsstitle3, #fsstitle4, #fsstitle5, #fsstitle6, #fsstitle7, #fsstitle8, #fsstitle9, #fsstitle10, #fsstitle11, #fsstitle12, #fsstitle13, #fsstitle14, #fsstitle15, .fsstitle {
+.accordion-title {
 	color: #ffffff;
 	background-color: #000000;
 	padding: 5px;
@@ -211,7 +211,7 @@ select#dropdown.fixed {
 	border: solid 1px #c3c3c3;
 }
 
-#fss1, #fss2, #fss3, #fss4, #fss5, #fss6, #fss7, #fss8, #fss9, #fss10, #fss11, #fss12, #fss13, #fss14, #fss15, .fss {
+.accordion-content {
 	padding: 5px;
 	text-align: center;
 	background-color: #a4d7f4;
@@ -219,18 +219,13 @@ select#dropdown.fixed {
 	display: none;
 }
 
-#fsstitle1:hover, #fsstitle2:hover, #fsstitle3:hover, #fsstitle4:hover, #fsstitle5:hover, #fsstitle6:hover, #fsstitle7:hover, #fsstitle8:hover, #fsstitle9:hover, #fsstitle10:hover, #fsstitle11:hover, #fsstitle12:hover, #fsstitle13:hover, #fsstitle14:hover, #fsstitle15:hover, .fsstitle:hover {
-	color: #a4d7f4;
-	font-weight: bold;
+.accordion-content.left {
+	text-align: left;
 }
 
-/*same style as above, but will left justify content*/
-#fss1_left, #fss2_left, #fss3_left, #fss4_left, #fss5_left, #fss6_left, #fss7_left, #fss8_left, #fss9_left, #fss10_left, #fss11_left, #fss12_left, #fss13_left, #fss14_left, #fss15_left {
-	padding: 5px;
-	text-align: left;
-	background-color: #a4d7f4;
-	border: solid 1px #c3c3c3;
-	display: none;
+.accordion-title:hover {
+	color: #a4d7f4;
+	font-weight: bold;
 }
 
 /*Code to reveal answers using jQuery instead of Javascript with toggle.*/
@@ -328,6 +323,9 @@ a.hideme {
 Additional changes were also made to the @media CSS code at the bottom of this page.
 Look for the following code with some changes that are done for mobile.*/
 a.floating-box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	box-sizing: border-box;
 	width: 30.333%;
 	height: auto;
@@ -339,7 +337,7 @@ a.floating-box {
 	font-family: GoodOT, sans-serif;
 	font-size: 16px;
 	color: black;
-	text-transform: initial;
+	/*text-transform: initial;*/
 	text-align: center;
 }
 
@@ -583,6 +581,13 @@ p {
 /*Code to Change "Back to Practice List" to a smaller font size.*/
 .goback {
 	font-size: 80%;
+}
+
+button.signup {
+	width: 67%; 
+	font-size: 1em; 
+	text-align: center; 
+	border: 3px solid;
 }
 
 /*********************************/
@@ -1460,6 +1465,7 @@ a#help:hover + .help-text {
 	
 	a.floating-box {
 		padding: 15px 5px;
+		line-height: 1.2em;
 	}
 
 	div.minimized button.recorder {
