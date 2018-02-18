@@ -1,6 +1,6 @@
 div.togo-practice p { display: none; }
 div.togo-practice { margin:10px; border: 3px solid; } 
-div.togo-practice div.hover { text-align:center; justify-content:center; position:absolute; margin-top:-200px; padding:50px 25px; background-color:#444; visibility:hidden; opacity:0.95; width:345px; height:200px; }
+div.togo-practice div.hover { display:flex; text-align:center; justify-content:center; align-items:center; position:absolute; margin-top:-200px; padding:50px 25px; background-color:#444; visibility:hidden; opacity:0.95; width:345px; height:200px; }
 div.togo-practice:hover div.hover { visibility: visible; color: #91cd8c; }
 div.togo-practice button {width: 345px; height:100px; font-size: 22px; text-align: center; border:none; border-radius:0; }
 div.togo-practice button:hover { background-color: #fff; color: #000; }
@@ -8,5 +8,5 @@ div.togo-practice button:hover { background-color: #fff; color: #000; }
 .parallax-pro-blue .footer-widgets { background-color: #91cd8c; }
 a.floating-box { color: #000; }
 .site-title a { background: url(https://cdn.rawgit.com/tfcs/tfcs/master/logotype_green.svg) no-repeat !important; }
-#fsstitle1:hover, #fsstitle2:hover, #fsstitle3:hover, #fsstitle4:hover, #fsstitle5:hover, #fsstitle6:hover, #fsstitle7:hover, #fsstitle8:hover, #fsstitle9:hover, #fsstitle10:hover, #fsstitle11:hover, #fsstitle12:hover, #fsstitle13:hover, #fsstitle14:hover, #fsstitle15:hover, .fsstitle:hover { color: #91cd8c; }
-#fss1, #fss2, #fss3, #fss4, #fss5, #fss6, #fss7, #fss8, #fss9, #fss10, #fss11, #fss12, #fss13, #fss14, #fss15, .fss, #fss1_left, #fss2_left, #fss3_left, #fss4_left, #fss5_left, #fss6_left, #fss7_left, #fss8_left, #fss9_left, #fss10_left, #fss11_left, #fss12_left, #fss13_left, #fss14_left, #fss15_left {background-color: #91cd8c;}
+.accordion-title:hover { color: #91cd8c; }
+.accordion-content {background-color: #91cd8c;}
