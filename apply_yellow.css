@@ -3,4 +3,4 @@
 .site-title a { background: url(https://cdn.rawgit.com/tfcs/tfcs/master/logotype_yellow.svg) no-repeat !important; }
 
 .accordion-content { background-color: #FFFBA8; }
-.accordion-title { color: #FFFBA8; }
+.accordion-title:hover { color: #FFFBA8; }
