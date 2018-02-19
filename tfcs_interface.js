@@ -12,11 +12,13 @@ function moveThings() {
             jQuery('.entry-content').removeClass('shifted');
         }
     }else{
-        // mobile view is simpler
+        // mobile view
         if(window.pageYOffset>window.mobileVideoMinimizePosition && window.pageYOffset<window.mobileVideoMinimizeEndPosition){
             jQuery('#video').addClass('minimized');
+            jQuery('#video-navigation').addClass('minimized');
         }else{
             jQuery('#video').removeClass('minimized');
+            jQuery('#video-navigation').removeClass('minimized');
         }
         jQuery('#video-frame').removeClass('minimized');
         jQuery('.entry-content').removeClass('shifted');

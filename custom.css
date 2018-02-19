@@ -913,6 +913,10 @@ button.help {
 	border-radius: inherit;
 }
 
+#video-container .audiolevel {
+	transition: 0.03s ease-out;
+}
+
 .progress {
 	position: absolute;
 	bottom: 0;
