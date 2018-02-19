@@ -17,4 +17,5 @@ jQuery(document).ready(function($) {
     setTimeout( ()=>clearInterval(toggleRed), 500 );
     setTimeout( ()=>$(this).removeClass("red"), 600 );
   });
+  $(".show-answers").click( () => $(".answer").removeClass("visibility-hidden") );
 });

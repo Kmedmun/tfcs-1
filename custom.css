@@ -156,6 +156,16 @@ button.answer:hover {
     background-color: #FF5252;
 }
 
+.clear-all-button {
+	cursor: pointer;
+	color: gray;
+	transition: all 0.3s;
+}
+
+div.clear-all-button:hover {
+	color: black;
+}
+
 /*Code to adjust the position of the number/bullet next to a SoundCite button*/
 span.soundcite-loaded {
 	/*display: inline-table;*/
@@ -353,16 +363,6 @@ a.floating-box.wide {
 .clear {
 	clear: left;
 	padding-top: 15px;
-}
-
-.clear-all-button {
-	cursor: pointer;
-	color: gray;
-	transition: all 0.3s;
-}
-
-div.clear-all-button:hover {
-	color: black;
 }
 
 /*Change blockquote text to a darker shade of gray.*/
