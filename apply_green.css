@@ -10,3 +10,11 @@ a.floating-box { color: #000; }
 .site-title a { background: url(https://cdn.rawgit.com/tfcs/tfcs/master/logotype_green.svg) no-repeat !important; }
 .accordion-title:hover { color: #91cd8c; }
 .accordion-content {background-color: #91cd8c;}
+
+.site-header .genesis-nav-menu.responsive-menu .current-menu-item > a,
+.site-header .genesis-nav-menu.responsive-menu .sub-menu li a:hover,
+.site-header .genesis-nav-menu.responsive-menu > .menu-item-has-children:before,
+.site-header .genesis-nav-menu.responsive-menu > li:hover > a,
+.site-header .genesis-nav-menu.responsive-menu a:hover {
+	color: #91cd8c;
+}

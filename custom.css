@@ -355,6 +355,16 @@ a.floating-box.wide {
 	padding-top: 15px;
 }
 
+.clear-all-button {
+	cursor: pointer;
+	color: gray;
+	transition: all 0.3s;
+}
+
+div.clear-all-button:hover {
+	color: black;
+}
+
 /*Change blockquote text to a darker shade of gray.*/
 blockquote {
 	color: #737373;

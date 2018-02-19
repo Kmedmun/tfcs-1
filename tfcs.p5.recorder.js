@@ -11,6 +11,7 @@ recorder.setInput(mic);
 // this sound file will be used to
 // playback & save the recording
 soundFile = new p5.SoundFile();
+soundFile.playMode('restart');
 
 function toggleRecord() {
   if (soundFile.isPlaying()) soundFile.stop(); jQuery("button.playback").removeClass("playing");
