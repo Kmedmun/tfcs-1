@@ -52,3 +52,5 @@ function drawBuffer( width, height, context, data ) {
         context.fillRect(i,(1+min)*amp,2,Math.max(1,(max-min)*amp));
     }
 }
+
+drawWaveform( new Uint8Array(2000) );
