@@ -10,4 +10,11 @@ jQuery(document).ready(function($) {
     //Hide the other panels
     $(".ss-nav-menu-content").not($(this).next()).slideUp('fast');
   });
+  $(".clear-all-button").click(function() { $('button.answer').removeClass("green red") });
+  $("button.right").click(function() { $(this).toggleClass("green") });
+  $("button.wrong").click(function() {
+    let toggleRed = setInterval( ()=>$(this).toggleClass("red"), 100 );
+    setTimeout( ()=>clearInterval(toggleRed), 500 );
+    setTimeout( ()=>$(this).removeClass("red"), 600 );
+  });
 });
