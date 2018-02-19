@@ -31,9 +31,9 @@ function playBack() {
 
 function drawLevel( reset=false ) {
   if (reset) {
-    jQuery(".audiolevel").css("height", "0%");
+    jQuery(".audiolevel").height(0);
   } else {
-    jQuery(".audiolevel").css("height", mic.getLevel() * 100 + "%");
+    jQuery(".audiolevel").height(mic.getLevel() * 100);
   }
   if (recorder.recording) {
     setTimeout(()=>drawLevel(), 50);

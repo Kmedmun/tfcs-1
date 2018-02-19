@@ -837,14 +837,6 @@ div.recorder {
 	z-index: 1000;
 }
 
-span.recorder.mobile {
-	display: none;
-}
-
-.entry-content.shifted #video-navigation span.recorder.mobile {
-	display: flex;
-}
-
 button.recorder {
 	width: 4em;
 	height: 4em;
@@ -1202,12 +1194,13 @@ button.help {
 	}
 
 	#video.minimized {
-		top: auto;
-		left: 0;
+		/*top: auto;*/
+		/*left: 0;*/
 		bottom: 0;
-		right: -180px;
-		border: 1px solid gray;
-		width: 50% !important;
+		right: 0;
+		/*border: 1px solid gray;*/
+		border: none;
+		width: 40% !important;
 		height: auto !important;
 		position: fixed !important;
 		z-index: 1;
@@ -1407,6 +1400,10 @@ button.help {
 
 	#video-frame {
 		height: 65.5vw;
+	}
+
+	#video.minimized {
+		width: 50% !important;
 	}
 
 	.no-mobile {
