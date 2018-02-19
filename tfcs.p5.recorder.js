@@ -23,7 +23,7 @@ function toggleRecord() {
 function playBack() {
   if (recorder.recording) recorder.stop();
   if (soundFile.isPlaying()) soundFile.stop(); 
-  else soundFile.play(); 
+  else soundFile.play(); setTimeout(()=>jQuery("button.playback").removeClass("playing"), soundFile.duration() * 1000);
   
   jQuery("button.playback").toggleClass("playing");
 }
