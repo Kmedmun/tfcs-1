@@ -10,7 +10,7 @@ jQuery(document).ready(function($) {
     //Hide the other panels
     $(".ss-nav-menu-content").not($(this).next()).slideUp('fast');
   });
-  $(".clear-all-button").click(function() { $(this).prev("table").find('.answer').removeClass("green red") });
+  $(".clear-all-button").click(function() { $(this).prev().find('.answer').removeClass("green red") });
   $(".correct").click(function() { $(this).toggleClass("green") });
   $(".wrong").click(function() {
     let toggleRed = setInterval( ()=>$(this).toggleClass("red"), 100 );
