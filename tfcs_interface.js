@@ -10,6 +10,7 @@ function moveThings() {
             }
         }else{
             jQuery('.entry-content').removeClass('shifted');
+            jQuery('#video-navigation').removeClass('minimized');
         }
     }else{
         // mobile view
