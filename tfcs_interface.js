@@ -45,80 +45,6 @@ function findPosY(obj) {
     return curtop;
 }
 
-// modified from http://air.ghost.io/recording-to-an-audio-file-using-html5-and-js/
-// appends an audio element to playback and download recording
-function createAudioElement(blobUrl) {
-    window.audioEl = document.createElement('audio');
-    window.audioEl.onpause = function() {jQuery("button.playback").removeClass("playing");};
-    window.audioEl.onplay = function() {jQuery("button.playback").addClass("playing");};
-    window.sourceEl = document.createElement('source');
-    window.sourceEl.src = blobUrl;
-    window.sourceEl.type = 'audio/webm';
-    window.audioEl.appendChild(sourceEl);
-}
-
-function startRecord() {
-    // request permission to access audio stream
-    navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
-        // store streaming data chunks in array
-        const chunks = [];
-        // if nonexistent, create media recorder instance to initialize recording
-        if (!window.recorder) {window.recorder = new MediaRecorder(stream);}
-        // function to be called when data is received
-        window.recorder.ondataavailable = e => {
-          // add stream data to chunks
-          chunks.push(e.data);
-          // if recorder is 'inactive' then recording has finished
-          if (window.recorder.state == 'inactive') {
-              // convert stream data chunks to a 'webm' audio format as a blob
-              const blob = new Blob(chunks, { type: 'audio/webm' });
-              // convert blob to URL so it can be assigned to a audio src attribute
-              createAudioElement(URL.createObjectURL(blob));
-          }
-        };
-        // start recording with delay time between receiving 'ondataavailable' events
-        window.recorder.start(500);
-      }).catch(console.error);
-}
-
-function stopRecord() {
-    window.recorder.stop();
-}
-
-var recording = false;
-function toggleRecord() {
-    if (window.audioEl && !window.audioEl.paused) {
-        playBack(); // stop playback
-    }
-    if (recording) {
-        stopRecord();
-    } else {
-        startRecord();
-    }
-    recording = !recording;
-    jQuery("button.record").toggleClass("recording");
-}
-
-function playBack() {
-    if (recording) {
-        toggleRecord();
-    }
-
-    // give a short timeout so that recorded audio blob can be properly put into audio object (and therefore played)
-    setTimeout(function(){
-        if (window.audioEl) {
-            if (window.audioEl.paused) {
-                window.audioEl.play();
-            } else {
-                window.audioEl.pause();
-                window.audioEl.currentTime = 0;
-            }
-        } else {
-            console.log('no recordings yet')
-        }
-    }, 50);
-}
-
 // add current page's title (which should be the phoneme) to navigation menu
 jQuery(document).ready(function($) {
     $('.current-phoneme').html(document.title);
@@ -151,8 +77,6 @@ jQuery(document).ready(function($) {
     if(jQuery.browser.mobile){
         $("span.recorder").html($("span#top").html());
         $("span.recorder").addClass("mobile");
-        $("span.mobile-instruction").addClass("mobile");
-        $("div#flashcontent").addClass("display-none");
         $("#video-navigation").addClass("mobile");
         window.videoNavHeight = 336;
     }else{window.videoNavHeight = 351;}
