@@ -14,7 +14,6 @@ h4.current {color:#91cd8c;}
   .ss-nav-menu-content.current {display: none;}
 }
 @media screen and (max-width: 768px) {
-  td {display:block; border-top:none;}
   h4.ss-nav-menu-toggle {font-size: 0.9em;} 
   .ss-nav-menu-content > a {font-size: 0.8em;}
 }
