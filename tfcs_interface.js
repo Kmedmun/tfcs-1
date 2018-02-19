@@ -74,7 +74,7 @@ jQuery(document).ready(function($) {
         }, 500, 'swing', function () {
             window.location.hash = target;
         });
-    });
+    }); 
 
     // if mobile browser
     if (window.innerWidth<960) {
