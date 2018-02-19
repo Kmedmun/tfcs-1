@@ -16,7 +16,7 @@ soundFile.playMode('restart');
 function toggleRecord() {
   if (soundFile.isPlaying()) soundFile.stop(); jQuery("button.playback").removeClass("playing");
   if (recorder.recording) recorder.stop(); 
-  else recorder.record( soundFile, undefined, ()=>drawWaveform( soundFile.buffer.getChannelData(0) ) );
+  else recorder.record( soundFile, undefined, ()=>drawWaveform( soundFile.buffer.getChannelData(0) ) ); drawLevel();
 
   jQuery("button.record").toggleClass("recording");
 }
@@ -27,6 +27,19 @@ function playBack() {
   else soundFile.play(); setTimeout(()=>jQuery("button.playback").removeClass("playing"), soundFile.duration() * 1000);
   
   jQuery("button.playback").toggleClass("playing");
+}
+
+function drawLevel( reset=false ) {
+  if (reset) {
+    jQuery(".audiolevel").css("height", "0%");
+  } else {
+    jQuery(".audiolevel").css("height", mic.getLevel() * 100 + "%");
+  }
+  if (recorder.recording) {
+    setTimeout(()=>drawLevel(), 50);
+  } else {
+    setTimeout(()=>drawLevel( true ), 50);
+  }
 }
 
 function drawWaveform( buffers ) {
