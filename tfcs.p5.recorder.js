@@ -13,7 +13,7 @@ recorder.setInput(mic);
 soundFile = new p5.SoundFile();
 
 function toggleRecord() {
-  if (soundFile.isPlaying()) playBack();
+  if (soundFile.isPlaying()) soundFile.stop(); jQuery("button.playback").removeClass("playing");
   if (recorder.recording) recorder.stop(); 
   else recorder.record( soundFile, undefined, ()=>drawWaveform( soundFile.buffer.getChannelData(0) ) );
 
