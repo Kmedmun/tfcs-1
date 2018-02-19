@@ -13,7 +13,7 @@ recorder.setInput(mic);
 soundFile = new p5.SoundFile();
 
 function toggleRecord() {
-  if (soundFile.isPlaying()) soundFile.stop(); jQuery("button.playback").removeClass("playing");
+  if (soundFile.isPlaying()) playBack();
   if (recorder.recording) recorder.stop(); 
   else recorder.record( soundFile, undefined, ()=>drawWaveform( soundFile.buffer.getChannelData(0) ) );
 
@@ -21,7 +21,7 @@ function toggleRecord() {
 }
 
 function playBack() {
-  if (recorder.recording) recorder.stop();
+  if (recorder.recording) toggleRecord();
   if (soundFile.isPlaying()) soundFile.stop(); 
   else soundFile.play(); setTimeout(()=>jQuery("button.playback").removeClass("playing"), soundFile.duration() * 1000);
   
@@ -36,7 +36,7 @@ function drawWaveform( buffers ) {
 function drawBuffer( width, height, context, data ) {
     var step = Math.ceil( data.length / width );
     var amp = height / 2;
-    context.fillStyle = "silver";
+    context.fillStyle = "black";
     context.clearRect(0,0,width,height);
     for(var i=0; i < width; i+=3){
         var min = 1.0;
