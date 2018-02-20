@@ -4,3 +4,11 @@
 
 .accordion-content { background-color: #FFFBA8; }
 .accordion-title:hover { color: #FFFBA8; }
+
+.site-header .genesis-nav-menu.responsive-menu .current-menu-item > a,
+.site-header .genesis-nav-menu.responsive-menu .sub-menu li a:hover,
+.site-header .genesis-nav-menu.responsive-menu > .menu-item-has-children:before,
+.site-header .genesis-nav-menu.responsive-menu > li:hover > a,
+.site-header .genesis-nav-menu.responsive-menu a:hover {
+	color: #FFFBA8;
+}
