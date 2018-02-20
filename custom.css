@@ -600,65 +600,167 @@ button.signup {
 	border: 3px solid;
 }
 
-/*********************************/
-/* Video layout and navigation, in TfCS to-go pronunciation pages */
-/*********************************/
-#video-navigation,
-#video-navigation-minimized {
-	z-index: 1;
-	background-color: #91cd8c;
+/* Audio Recorder */
+div.recorder {
+	display: flex;
+	z-index: 1000;
+}
+
+button.recorder {
+	width: 4em;
+	height: 4em;
+	margin: 25px 5px;
+	padding: 0;
+	border-radius: 5%;
+	border: none;
+	background-size: 67%;
+	background-repeat: no-repeat;
+	background-position: center;
+	outline: none;
+	z-index: 1000;
+}
+
+button:hover.recorder {
+	background-color: #FFF;
+	color: #000;
+	transform: scale(1.1);
+}
+
+button.record {
+	background-image: url("../files/2016/06/microphone-8x.png");
+}
+
+button:hover.record {
+	background-image: url("../files/2016/06/microphone-8x-red.png");
+}
+
+button.record.recording {
+	background-image: url("../files/2016/06/media-stop-8x.png");
+}
+
+button.playback {
+	background-image: url("../files/2016/06/media-play-8x.png");
+}
+
+button.playback.playing {
+	background-image: url("../files/2016/06/media-stop-8x.png");
+}
+
+button.help {
+	background-image: url("../files/2016/07/question-mark-8x.png");
+}
+
+.level {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	left: 0;
+	top: 0;
+	border-radius: inherit;
+}
+
+.audiolevel {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(250,0,0,0.5);
+	border-radius: inherit;
+}
+
+#video-container .audiolevel {
+	transition: 0.03s ease-out;
+}
+
+.progress {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	background-color: rgba(0,160,0,0.5);
+	border-radius: inherit;
+}
+/***********************************************/
+/* Video layout and navigation for Tools to-go */
+/***********************************************/
+#video-navigation {
 	font-family: GoodOT, sans-serif;
+	font-size: 26px;
+	position: relative;
+	display: inline-block;
+	background-color: #91cd8c;
+	width: 25%;
+	height: 480px;
+	top: 0;
 	left: 0;
 	justify-content: space-around;
 	align-items: center;
 	text-align: center;
+	padding: .5em 0;
+	border-radius: 15px 0 0 0;
+	z-index: 1;
 }
 
-#video-navigation a,
-#video-navigation-minimized a {
+#video-navigation a {
 	color: #222;
 	line-height: 3em;
 } 
-
-#video-navigation {
-	position: relative;
-	top: 0;
-	display: inline-block;
-	font-size: 26px;
-	width: 25%;
-	height: 480px;
-	/*border-bottom: solid 2px;*/
-	padding: .5em 0;
-	border-radius: 15px 0 0 0;
-}
 
 #video-container {
 	min-height: 480px;
 }
 
-/* Minimized layout is triggered by scroll position using jQuery- see tfcs_interface.js */
-#video-navigation-minimized {
+/* Minimized layout is triggered by scroll position using jQuery- see tfcs.phonemes.js */
+/* .shifted when window.width >= 960 */
+/* .minimized when window.width < 960 */
+.entry-content.shifted #video-navigation,
+#video-navigation.minimized {
 	position: fixed;
-	top: 70px;
-	display: none;
+	display: flex;
 	font-size: 22px;
 	line-height: 1em;
 	width: 100%;
 	height: 2em;
 	border-radius: 0;
-	padding: 0 15%;
-}
-
-.entry-content.shifted #video-navigation-minimized {
-	display: flex;
+	padding: 0 15px;
+	opacity: 1;	
 }
 
 .entry-content.shifted #video-navigation {
-	opacity: .2;
+	top: 70px;
 }
 
-body.admin-bar #video-navigation-minimized {
+#video-navigation.minimized {
+	top: 0px;
+}
+
+body.admin-bar .entry-content.shifted #video-navigation {
 	top: 107px;
+}
+
+.entry-content.shifted span.recorder,
+#video-navigation.minimized span.recorder {
+	height: 75px;
+}
+
+.entry-content.shifted span.recorder > br,
+#video-navigation.minimized br {
+	display:none;
+}
+
+.entry-content.shifted #video-navigation button.recorder,
+#video-navigation.minimized button.recorder {
+	position: relative;
+	top: 11px;
+	width: 2em;
+	height: 2em;
+	margin: 1px;
+}
+
+.entry-content.shifted #wavedisplay,
+#video-navigation.minimized #wavedisplay {
+	position: relative;
+	top: 15px;
 }
 
 /* Positions and resizes video */
@@ -831,93 +933,6 @@ button.recorder {
 	transition: none;
 }
 
-/* Audio Recorder */
-div.recorder {
-	display: flex;
-	z-index: 1000;
-}
-
-button.recorder {
-	width: 4em;
-	height: 4em;
-	margin: 25px 5px;
-	padding: 0;
-	border-radius: 5%;
-	border: none;
-	background-size: 67%;
-	background-repeat: no-repeat;
-	background-position: center;
-	outline: none;
-	z-index: 1000;
-}
-
-#video-navigation-minimized button.recorder {
-	width: 2em;
-	height: 2em;
-	margin: 1px;
-}
-
-button:hover.recorder {
-	background-color: #FFF;
-	color: #000;
-	transform: scale(1.1);
-}
-
-button.record {
-	background-image: url("../files/2016/06/microphone-8x.png");
-}
-
-button:hover.record {
-	background-image: url("../files/2016/06/microphone-8x-red.png");
-}
-
-button.record.recording {
-	background-image: url("../files/2016/06/media-stop-8x.png");
-}
-
-button.playback {
-	background-image: url("../files/2016/06/media-play-8x.png");
-}
-
-button.playback.playing {
-	background-image: url("../files/2016/06/media-stop-8x.png");
-}
-
-button.help {
-	background-image: url("../files/2016/07/question-mark-8x.png");
-}
-
-.level {
-	width: 100%;
-	height: 100%;
-	position: relative;
-	left: 0;
-	top: 0;
-	border-radius: inherit;
-}
-
-.audiolevel {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	background-color: rgba(250,0,0,0.5);
-	border-radius: inherit;
-}
-
-#video-container .audiolevel {
-	transition: 0.03s ease-out;
-}
-
-.progress {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	height: 100%;
-	background-color: rgba(0,160,0,0.5);
-	border-radius: inherit;
-}
-
 /* visibility-related styles, toggled by jQuery */
 .display-none {
 	display: none;
@@ -1045,12 +1060,17 @@ button.help {
 		width: 746px;
 	}
 
-	#video-navigation-minimized {
+	.entry-content.shifted #video-navigation {
 		top: 0;
 	}
 
-	body.admin-bar .entry-content.shifted #video-navigation {
+	body.admin-bar .entry-content.shifted #video-navigation,
+	body.admin-bar #video-navigation.minimized {
 		top: 32px;
+	}
+
+	#video-container {
+		min-height: 391px;
 	}
 
 	#video-navigation {
@@ -1355,15 +1375,14 @@ button.help {
 	.site-header .genesis-nav-menu.responsive-menu .sub-menu li a:hover,
 	.site-header .genesis-nav-menu.responsive-menu > .menu-item-has-children:before,
 	.site-header .genesis-nav-menu.responsive-menu > li:hover > a,
-  .site-header .genesis-nav-menu.responsive-menu a:hover {
+	.site-header .genesis-nav-menu.responsive-menu a:hover {
 		color: #44ace8;
 	}
 
 	.site-header .genesis-nav-menu.responsive-menu .sub-menu li a,
-	.site-header .genesis-nav-menu.responsive-menu .sub-menu
-{
-	color: #444;
-}
+	.site-header .genesis-nav-menu.responsive-menu .sub-menu {
+		color: #444;
+	}
 	
 	.home-even,
 	.home-odd {
@@ -1392,9 +1411,6 @@ button.help {
 	}
 	
 	div.exercise {
-		/*width: 110%;*/
-		/*left: -5%;*/
-		/*position: relative;*/
 		padding: 1em 0.5em;
 	}
 
@@ -1406,14 +1422,18 @@ button.help {
 		width: 50% !important;
 	}
 
+	#video-navigation.minimized a {
+		display:none;
+	}
+
 	.no-mobile {
 		display: none;
 	}
 
-  #mc_embed_signup .mc-field-group input {
+	#mc_embed_signup .mc-field-group input {
 	  width: 100%;
 		margin: 0;
-  }
+	}
 	
 
 }
@@ -1449,6 +1469,10 @@ button.help {
 		width: 1.5em;
 		height: 1.5em;
 		border-radius: 0.3em;
+	}
+
+	#video-navigation.minimized span.recorder-text {
+		display:none;
 	}
 
 }
