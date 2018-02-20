@@ -80,12 +80,6 @@ jQuery(document).ready(function($) {
     if (window.innerWidth<960) {
         $("#video-container").height( $("#video-navigation").height()+$("#video-frame").height() );
     }
-    // if(jQuery.browser.mobile){
-    //     $("span.recorder").html($("span#top").html());
-    //     $("span.recorder").addClass("mobile");
-    //     $("#video-navigation").addClass("mobile");
-    //     window.videoNavHeight = 336;
-    // }else{window.videoNavHeight = 351;}
 
     // adapted from Jim W's code: http://stackoverflow.com/a/17494943
     // change layout based on amount of Y scroll
