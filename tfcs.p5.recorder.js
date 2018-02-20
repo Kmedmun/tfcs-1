@@ -1,18 +1,3 @@
-var mic, recorder, soundFile;
-
-mic = new p5.AudioIn();
-// prompts user to enable their browser mic
-mic.start();
-
-recorder = new p5.SoundRecorder();
-// connect the mic to the recorder
-recorder.setInput(mic);
-
-// this sound file will be used to
-// playback & save the recording
-soundFile = new p5.SoundFile();
-soundFile.playMode('restart');
-
 function toggleRecord() {
   if (soundFile.isPlaying()) soundFile.stop(); jQuery("button.playback").removeClass("playing");
   if (recorder.recording) recorder.stop(); 
@@ -66,4 +51,20 @@ function drawBuffer( width, height, context, data ) {
     }
 }
 
-drawWaveform( new Uint8Array(2000) );
+var mic, recorder, soundFile;
+mic = new p5.AudioIn();
+// prompts user to enable their browser mic
+mic.start();
+
+recorder = new p5.SoundRecorder();
+// connect the mic to the recorder
+recorder.setInput(mic);
+
+// this sound file will be used to
+// playback & save the recording
+soundFile = new p5.SoundFile();
+soundFile.playMode('restart');
+
+jQuery(document).ready(function($) {
+  drawWaveform( new Uint8Array(2000) );
+}
