@@ -67,4 +67,4 @@ soundFile.playMode('restart');
 
 jQuery(document).ready(function($) {
   drawWaveform( new Uint8Array(2000) );
-}
+});
