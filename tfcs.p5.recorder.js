@@ -2,7 +2,7 @@ var mic, recorder, soundFile;
 var recorderInitiated = false;
 
 function toggleRecord() {
-  if (!recorderInitiated) initiateRecorder(mic, recorder, soundFile);
+  if (!recorderInitiated) initiateRecorder();
   if (soundFile.isPlaying()) soundFile.stop(); jQuery("button.playback").removeClass("playing");
   if (recorder.recording) recorder.stop(); 
   else recorder.record( soundFile, undefined, ()=>drawWaveform( soundFile.buffer.getChannelData(0) ) ); drawLevel();
@@ -10,7 +10,7 @@ function toggleRecord() {
   jQuery("button.record").toggleClass("recording");
 }
 
-function initiateRecorder(mic, recorder, soundFile) {
+function initiateRecorder() {
   mic = new p5.AudioIn();
   // prompts user to enable their browser mic
   mic.start();
