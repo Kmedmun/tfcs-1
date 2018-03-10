@@ -1,0 +1,72 @@
+/* Change header font */
+@font-face {
+	font-family: GoodOT;
+	src: url('https://cdn.rawgit.com/tfcs/tfcs/b3b2d8aa/gotm.otf');
+}
+
+.site-title,
+.site-description {
+	font-family: GoodOT;
+}
+
+@media (min-width: 768px) {
+	.site-title {
+		font-size: 3.5rem;
+	}
+}
+
+@media (min-width: 1200px) {
+	.site-title {
+		font-size: 4rem;
+	}
+}
+
+@font-face {
+	font-family: BMSemibold;
+	src: url('https://cdn.rawgit.com/tfcs/tfcs/b3b2d8aa/bmsb.otf');
+}
+
+@font-face {
+	font-family: BMRegular;
+	src: url('https://cdn.rawgit.com/tfcs/tfcs/b3b2d8aa/bmr.otf');
+}
+
+/* Add TfCS Logo in header */
+/*
+div.site-branding::after {
+	margin: 1rem auto -5px; */
+/*	content: url(https://cdn.rawgit.com/achimkoh/tfcs/182a4989/TfCS_Orange.svg); */
+/*	content: url(https://cdn.rawgit.com/achimkoh/tfcs/5de9e572/TfCS_Gray.svg);
+}
+*/
+/* Add Baruch Logo in menu */
+.menu-item > a[href*="www.baruch.cuny.edu"] {
+	content: url(https://blogs.baruch.cuny.edu/tfcs/files/2015/04/BC-TEST-WHITE.png);
+	height: 40px;
+	width: 92px;
+	padding: 0;
+	margin: -15px 0;
+	right: 20px;
+}
+
+@media (max-width: 768px) {
+	.menu-item > a[href*="www.baruch.cuny.edu"] {
+		margin: 2rem 0;
+	}
+}
+
+/* Add TfCS Logo in menu */
+.menu-item > a[href*="tfcs.baruch.cuny.edu"] {
+	content: url(https://rawgit.com/tfcs/tfcs/master/TfCS_White.svg);
+	height: 32px;
+	width: 80px;
+	padding: 0;
+	margin: -22px 0;
+	left: 36px;
+}
+
+@media (max-width: 768px) {
+	.menu-item > a[href*="tfcs.baruch.cuny.edu"] {
+		margin: 2rem 0;
+	}
+}
