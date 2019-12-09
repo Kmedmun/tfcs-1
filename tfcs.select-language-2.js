@@ -9,7 +9,8 @@ jQuery(document).ready(function($){
   let korean=['/b/', '/d/', '/f/', '/g/', '/l/', '/r/', '/s/', '/ʃ/', '/v/', '/z/', '/i/', '/ɪ/', '/ɛ/', '/æ/', '/ʌ/', '/ɑ/', '/kw/'];
   let portuguese=['/dʒ/', '/l/', '/m/', '/n/', '/ŋ/', '/ʃ/', '/t∫', '/θ/', '/i/', '/ɪ/', '/ɛ/', '/æ/', '/ʌ/', '/st/', '/sk/', '/sp/', '/sl/'];
   let russian=['/h/', '/ŋ/', '/v/', '/w/', '/i/', '/ɪ/', '/e/', '/ɛ/', '/æ/'];
-  let spanish=['/dʒ/', '/ʃ/', '/t∫/', '/v/', '/y/', '/z/', '/i/', '/ɪ/', '/æ/', '/ʌ/', '/o/', '/ɑ/', '/st/', '/sk/', '/ks/', '/sp/', '/sl/'];
+  let spanish=['/b/', '/dʒ/', '/ʃ/', '/t∫/', '/v/', '/y/', '/z/', '/i/', '/ɪ/', '/æ/', '/ʌ/', '/o/', '/ɑ/', '/st/', '/sk/', '/ks/', '/sp/', '/sl/'];
+  let turkish=['/θ/', '/ŋ/', '/ð/', '/æ/', '/ɛ/', '/w/', '/r/', '/o/'];
 
   let languages=[arabic,cantonese,fuzhounese,mandarin,french,japanese,korean,portuguese,russian,spanish];
   let languageNames=['arabic','cantonese','fuzhounese','mandarin','french','japanese','korean','portuguese','russian','spanish'];
