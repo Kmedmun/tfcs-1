@@ -11,9 +11,10 @@ jQuery(document).ready(function($){
   let russian=['/h/', '/ŋ/', '/v/', '/w/', '/i/', '/ɪ/', '/e/', '/ɛ/', '/æ/'];
   let spanish=['/b/', '/dʒ/', '/ʃ/', '/t∫/', '/v/', '/y/', '/z/', '/i/', '/ɪ/', '/æ/', '/ʌ/', '/o/', '/ɑ/', '/st/', '/sk/', '/ks/', '/sp/', '/sl/'];
   let turkish=['/θ/', '/ŋ/', '/ð/', '/æ/', '/ɛ/', '/w/', '/r/', '/o/'];
+  let urdu=['/v/']
 
-  let languages=[arabic,cantonese,fuzhounese,mandarin,french,japanese,korean,portuguese,russian,spanish,turkish];
-  let languageNames=['arabic','cantonese','fuzhounese','mandarin','french','japanese','korean','portuguese','russian','spanish','turkish'];
+  let languages=[arabic,cantonese,fuzhounese,mandarin,french,japanese,korean,portuguese,russian,spanish,turkish,urdu];
+  let languageNames=['arabic','cantonese','fuzhounese','mandarin','french','japanese','korean','portuguese','russian','spanish','turkish','urdu'];
 
   // add languages to highlight for each phoneme
   languages.forEach( (lang, i) => { 
