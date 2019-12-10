@@ -14,10 +14,10 @@ jQuery(document).ready(function($){
   let spanish=['/b/', '/dʒ/', '/ʃ/', '/t∫/', '/v/', '/y/', '/z/', '/i/', '/ɪ/', '/æ/', '/ʌ/', '/o/', '/ɑ/', '/st/', '/sk/', '/ks/', '/sp/', '/sl/'];
   let turkish=['/v/', '/ŋ/', '/ʌ/', '/æ/', '/ɛ/', '/w/', '/r/', '/o/', '/ɪ/', '/st/', '/sk/', '/sp/'];
   let urdu=['/w/', '/v/' '/p/', '/t/', '/k/', '/æ/', '/r/', '/e/', '/st/', '/sp/', '/sk/']
-  let vietnamese=[]
+  let vietnamese=['/ʒ/', '/v/', '/dʒ/','/t∫/', '/st/', '/sp/', '/sk/', '/ʃ/', '/tʃ/', '/ɛ/', '/æ/','/i/', '/ɪ/']
 
-  let languages=[arabic,cantonese,fuzhounese,mandarin,french,japanese,korean,portuguese,russian,spanish,turkish];
-  let languageNames=['arabic','cantonese','fuzhounese','mandarin','french','japanese','korean','portuguese','russian','spanish','turkish'];
+  let languages=[arabic,cantonese,fuzhounese,mandarin,french,japanese,korean,portuguese,russian,spanish,turkish,urdu,vietnamese,hindi,bengali];
+  let languageNames=['arabic','cantonese','fuzhounese','mandarin','french','japanese','korean','portuguese','russian','spanish','turkish','urdu','vietnamese','hindi','bengali'];
 
   // add languages to highlight for each phoneme
   languages.forEach( (lang, i) => { 
