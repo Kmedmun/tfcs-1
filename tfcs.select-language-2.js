@@ -13,7 +13,7 @@ jQuery(document).ready(function($){
   let russian=['/h/', '/ŋ/', '/v/', '/w/', '/i/', '/ɪ/', '/e/', '/ɛ/', '/æ/'];
   let spanish=['/b/', '/dʒ/', '/ʃ/', '/t∫/', '/v/', '/y/', '/z/', '/i/', '/ɪ/', '/æ/', '/ʌ/', '/o/', '/ɑ/', '/st/', '/sk/', '/ks/', '/sp/', '/sl/'];
   let turkish=['/v/', '/ŋ/', '/ʌ/', '/æ/', '/ɛ/', '/w/', '/r/', '/o/', '/ɪ/', '/st/', '/sk/', '/sp/'];
-  let urdu=['/w/', '/v/' '/p/', '/t/', '/k/', '/æ/', '/r/', '/e/', '/st/', '/sp/', '/sk/'];
+  let urdu=['/w/', '/v/', '/p/', '/t/', '/k/', '/æ/', '/r/', '/e/', '/st/', '/sp/', '/sk/'];
   let vietnamese=['/ʒ/', '/v/', '/dʒ/','/t∫/', '/st/', '/sp/', '/sk/', '/ʃ/', '/tʃ/', '/ɛ/', '/æ/','/i/', '/ɪ/'];
 
   let languages=[arabic,cantonese,fuzhounese,mandarin,french,japanese,korean,portuguese,russian,spanish,turkish,urdu,vietnamese,hindi,bengali];
