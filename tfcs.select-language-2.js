@@ -17,7 +17,7 @@ jQuery(document).ready(function($){
   let vietnamese=['/ʒ/', '/v/', '/dʒ/', '/t∫/', '/st/', '/sp/', '/sk/', '/ʃ/', '/tʃ/', '/ɛ/', '/æ/', '/i/', '/ɪ/'];
 
   let languages=[arabic,cantonese,fuzhounese,mandarin,french,japanese,korean,portuguese,russian,spanish,turkish,urdu,vietnamese,hindi,bengali];
-  let languageNames=['arabic','cantonese','fuzhounese','mandarin','french','japanese','korean','portuguese','russian','spanish','turkish','urdu','vietnaemese','hindi','bengali'];
+  let languageNames=['arabic','cantonese','fuzhounese','mandarin','french','japanese','korean','portuguese','russian','spanish','turkish','urdu','vietnamese','hindi','bengali'];
 
   // add languages to highlight for each phoneme
   languages.forEach( (lang, i) => { 
